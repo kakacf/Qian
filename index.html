@@ -7,7 +7,7 @@
 <style>
 :root{--bg:#0b1020;--panel:#131a2b;--panel2:#0f1626;--text:#eef3ff;--muted:#9aabc7;--border:#26324a;--green:#42d392;--yellow:#ffd166;--red:#ff6b6b;--orange:#ff9f43}
 *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#0b1020,#0d1322);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;line-height:1.55}
-.wrap{max-width:1120px;margin:auto;padding:22px} h1{font-size:clamp(28px,5vw,46px);margin:.2em 0} h2{margin:0 0 14px;font-size:22px} .muted{color:var(--muted)} .hero,.section,.card,.chart-card{background:rgba(19,26,43,.92);border:1px solid var(--border);border-radius:18px} .hero{padding:22px;margin-bottom:16px} .section{padding:18px;margin:16px 0}
+.update-banner{background:linear-gradient(90deg,#ffd166,#ffb84d);color:#17120a;text-align:center;padding:8px 14px;font-size:13px;font-weight:750;letter-spacing:.1px}.wrap{max-width:1120px;margin:auto;padding:22px} h1{font-size:clamp(28px,5vw,46px);margin:.2em 0} h2{margin:0 0 14px;font-size:22px} .muted{color:var(--muted)} .hero,.section,.card,.chart-card{background:rgba(19,26,43,.92);border:1px solid var(--border);border-radius:18px} .hero{padding:22px;margin-bottom:16px} .section{padding:18px;margin:16px 0}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px} .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} .card{padding:15px} .big{font-size:25px;font-weight:750} .tag{display:inline-flex;padding:5px 9px;border-radius:999px;font-size:13px;font-weight:700;border:1px solid var(--border)} .g{color:var(--green)} .y{color:var(--yellow)} .r{color:var(--red)} .o{color:var(--orange)}
 table{width:100%;border-collapse:collapse} th,td{padding:10px 8px;border-bottom:1px solid var(--border);text-align:left} th{color:var(--muted);font-size:13px} .chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px} .chart-card{padding:14px} svg{width:100%;height:auto;background:var(--panel2);border-radius:12px} .grid{stroke:#33405d;stroke-width:1} .axis{fill:#9aabc7;font-size:11px} .series{stroke:#8fb3ff} .s1{stroke:#70d6a8} .s2{stroke:#ffb86b}
 ul{margin:.4em 0;padding-left:1.25em} .footer{color:var(--muted);font-size:12px;padding:10px 2px 28px}
@@ -15,68 +15,18 @@ ul{margin:.4em 0;padding-left:1.25em} .footer{color:var(--muted);font-size:12px;
 @media(max-width:560px){.wrap{padding:12px} .grid,.grid3,.chart-grid{grid-template-columns:1fr} th,td{font-size:13px}}
 </style>
 </head>
-<body><main class="wrap">
+<body><div class="update-banner">📣 每個交易日早上 07:30 更新｜重大市場變化將另外提醒</div><main class="wrap">
 <div class="hero">
 <div class="muted">Daily Market Brief · 2026-09-10 · Asia/Taipei</div>
 <h1>Brent 站上 $100，市場重新交易通膨與利率風險</h1>
 <p>油價高檔 → 通膨擔憂升溫 → 美債殖利率上行 → 股票估值承壓；科技股相對抗跌，但 QLD 槓桿曝險需更保守。</p>
 </div>
-
-<section class="section"><h2>🌎 Overnight Dashboard</h2>
-<div class="grid">
-<div class="card"><div class="muted">S&P 500</div><div class="big">7,636.36</div><div class="r">-0.48%</div></div>
-<div class="card"><div class="muted">Nasdaq 100</div><div class="big">29,421.55</div><div class="r">-0.29%</div></div>
-<div class="card"><div class="muted">US 10Y</div><div class="big">4.83%</div><div class="r">+3 bps</div></div>
-<div class="card"><div class="muted">VIX</div><div class="big">16.46</div><div class="r">+4.71%</div></div>
-</div></section>
-
-<section class="section"><h2>🎯 ETF 進場雷達</h2>
-<div class="grid3">
-<div class="card"><div class="big">VOO <span class="y">🟡</span></div><p>等待。利率與油價仍偏高，風險報酬尚未明顯改善。</p></div>
-<div class="card"><div class="big">QQQ / QQQM <span class="y">🟡</span></div><p>等待。科技相對抗跌，但 10Y 接近高檔，估值敏感度仍高。</p></div>
-<div class="card"><div class="big">QLD <span class="r">🔴</span></div><p>風險偏高。每日 2x 槓桿在高波動與高殖利率環境下標準需更嚴格。</p></div>
-</div></section>
-
-<section class="section"><h2>📈 Rates / Commodities / FX</h2>
-<div class="grid">
-<div class="card"><div class="muted">US 2Y</div><div class="big">4.43%</div></div>
-<div class="card"><div class="muted">US 30Y</div><div class="big">5.28%</div></div>
-<div class="card"><div class="muted">Brent</div><div class="big">$101.10</div></div>
-<div class="card"><div class="muted">WTI</div><div class="big">$96.25</div></div>
-<div class="card"><div class="muted">USD/TWD</div><div class="big">31.49</div></div>
-<div class="card"><div class="muted">Gold Futures</div><div class="big">$4,460.80</div></div>
-</div></section>
-
-<section class="section"><h2>📉 趨勢圖表</h2>
-<div class="chart-grid">
-<div class="chart-card"><h3>USD/TWD 近一個月</h3><svg viewBox="0 0 720 220" role="img" aria-label="trend chart"><line x1="28" y1="28" x2="692" y2="28" class="grid"/><line x1="28" y1="110.0" x2="692" y2="110.0" class="grid"/><line x1="28" y1="192" x2="692" y2="192" class="grid"/><polyline class="series s0" points="28.0,28.0 53.5,51.1 79.1,60.6 104.6,55.8 130.2,65.8 155.7,57.6 181.2,63.2 206.8,76.9 232.3,98.3 257.8,132.2 283.4,115.9 308.9,117.3 334.5,119.4 360.0,132.9 385.5,131.9 411.1,129.4 436.6,138.2 462.2,157.5 487.7,171.6 513.2,165.0 538.8,170.8 564.3,154.1 589.8,149.3 615.4,171.3 640.9,185.0 666.5,188.0 692.0,192.0" fill="none" stroke-width="3"/><text x="28" y="18" class="axis">32.45</text><text x="28" y="212" class="axis">31.50</text></svg><p class="muted">台幣近一個月走強，美元資產換算回台幣形成匯率逆風。</p></div>
-<div class="chart-card"><h3>US 10Y 與 5% 風險線</h3><svg viewBox="0 0 720 220" role="img" aria-label="trend chart"><line x1="28" y1="28" x2="692" y2="28" class="grid"/><line x1="28" y1="110.0" x2="692" y2="110.0" class="grid"/><line x1="28" y1="192" x2="692" y2="192" class="grid"/><polyline class="series s0" points="28.0,192.0 692.0,28.0" fill="none" stroke-width="3"/><text x="28" y="18" class="axis">4.83</text><text x="28" y="212" class="axis">4.80</text></svg><p class="muted">目前約 4.83%；若持續往 5% 靠近，成長股與 QLD 壓力可能升高。</p></div>
-<div class="chart-card"><h3>Gold 近期價格</h3><svg viewBox="0 0 720 220" role="img" aria-label="trend chart"><line x1="28" y1="28" x2="692" y2="28" class="grid"/><line x1="28" y1="110.0" x2="692" y2="110.0" class="grid"/><line x1="28" y1="192" x2="692" y2="192" class="grid"/><polyline class="series s0" points="28.0,192.0 360.0,73.2 692.0,28.0" fill="none" stroke-width="3"/><text x="28" y="18" class="axis">4460.80</text><text x="28" y="212" class="axis">4453.30</text></svg><p class="muted">地緣政治與美元提供支撐，但高殖利率仍是主要壓力。</p></div>
-<div class="chart-card"><h3>VOO vs QQQ vs QLD（8/7 = 100）</h3><svg viewBox="0 0 720 220" role="img" aria-label="trend chart"><line x1="28" y1="28" x2="692" y2="28" class="grid"/><line x1="28" y1="110.0" x2="692" y2="110.0" class="grid"/><line x1="28" y1="192" x2="692" y2="192" class="grid"/><polyline class="series s0" points="28.0,28.0 58.2,31.0 88.4,48.8 118.5,33.4 148.7,0.0 178.9,9.1 209.1,33.2 239.3,69.9 269.5,58.9 299.6,104.0 329.8,82.4 360.0,97.1 390.2,81.7 420.4,80.4 450.5,44.3 480.7,56.4 510.9,73.8 541.1,109.5 571.3,85.4 601.5,29.1 631.6,50.5 661.8,78.5 692.0,103.3" fill="none" stroke-width="3"/><polyline class="series s1" points="28.0,28.0 58.2,40.9 88.4,56.5 118.5,32.5 148.7,-9.9 178.9,-4.7 209.1,0.7 239.3,61.0 269.5,69.7 299.6,94.9 329.8,82.7 360.0,116.9 390.2,95.7 420.4,92.6 450.5,43.5 480.7,67.0 510.9,65.8 541.1,110.5 571.3,102.2 601.5,60.9 631.6,53.8 661.8,57.1 692.0,67.4" fill="none" stroke-width="3"/><polyline class="series s2" points="28.0,28.0 58.2,43.2 88.4,56.5 118.5,25.3 148.7,-22.6 178.9,-16.9 209.1,-10.0 239.3,66.1 269.5,74.0 299.6,103.0 329.8,88.2 360.0,130.6 390.2,106.0 420.4,102.7 450.5,45.1 480.7,75.3 510.9,72.4 541.1,126.4 571.3,117.8 601.5,69.0 631.6,62.3 661.8,66.5 692.0,79.9" fill="none" stroke-width="3"/><text x="28" y="18" class="axis">100.00</text><text x="28" y="212" class="axis">95.19</text></svg><p class="muted">QLD 多日波動明顯放大，需特別留意槓桿複利與回撤。</p></div>
-</div></section>
-
-<section class="section"><h2>🗓️ 今日重要事件（台灣時間）</h2>
-<table><thead><tr><th>時間</th><th>事件</th><th>重點</th></tr></thead><tbody>
-<tr><td>20:30</td><td>美國 PPI / Core PPI</td><td>觀察能源衝擊是否擴散到生產者物價</td></tr>
-<tr><td>22:30</td><td>EIA 能源庫存</td><td>油價是否繼續維持 $100 上方的重要短線線索</td></tr>
-<tr><td>9/11 01:00</td><td>30Y Treasury Auction</td><td>長債需求與期限溢價</td></tr>
-</tbody></table></section>
-
-<section class="section"><h2>⚠️ Portfolio Risk</h2>
-<ul><li>科技 / Nasdaq 集中度偏高。</li><li>QLD 是每日 2x 槓桿，波動與回撤被放大。</li><li>10Y / 30Y 高殖利率對長久期成長股估值不利。</li><li>近期台幣升值，美元資產換算回台幣有匯率逆風。</li></ul>
-</section>
-
-<section class="section"><h2>🚦 Market Regime</h2>
-<div class="grid">
-<div class="card"><div class="big y">🟡 Equity</div><div class="muted">中性偏謹慎</div></div>
-<div class="card"><div class="big y">🟡 Tech</div><div class="muted">相對抗跌</div></div>
-<div class="card"><div class="big g">🟢 Energy</div><div class="muted">強勢</div></div>
-<div class="card"><div class="big r">🔴 Bonds</div><div class="muted">偏弱</div></div>
-</div></section>
-
-<section class="section"><h2>🎯 今天只看 3 件事</h2>
-<ol><li>Brent 能否持續站在 $100 以上。</li><li>20:30 PPI 是否再次推高通膨預期。</li><li>US 10Y 是否從 4.83% 進一步往 5% 靠近。</li></ol>
-</section>
-
-<div class="footer">資料僅供市場研究與資訊整理，不構成個人化投資建議。網站版 v2，後續可改為每日自動更新。</div>
-</main></body></html>
+<section class="section"><h2>🌎 Overnight Dashboard</h2><div class="grid"><div class="card"><div class="muted">S&P 500</div><div class="big">7,636.36</div><div class="r">-0.48%</div></div><div class="card"><div class="muted">Nasdaq 100</div><div class="big">29,421.55</div><div class="r">-0.29%</div></div><div class="card"><div class="muted">US 10Y</div><div class="big">4.83%</div><div class="r">+3 bps</div></div><div class="card"><div class="muted">VIX</div><div class="big">16.46</div><div class="r">+4.71%</div></div></div></section>
+<section class="section"><h2>🎯 ETF 進場雷達</h2><div class="grid3"><div class="card"><div class="big">VOO <span class="y">🟡</span></div><p>等待。利率與油價仍偏高，風險報酬尚未明顯改善。</p></div><div class="card"><div class="big">QQQ / QQQM <span class="y">🟡</span></div><p>等待。科技相對抗跌，但 10Y 接近高檔，估值敏感度仍高。</p></div><div class="card"><div class="big">QLD <span class="r">🔴</span></div><p>風險偏高。每日 2x 槓桿在高波動與高殖利率環境下標準需更嚴格。</p></div></div></section>
+<section class="section"><h2>📈 Rates / Commodities / FX</h2><div class="grid"><div class="card"><div class="muted">US 2Y</div><div class="big">4.43%</div></div><div class="card"><div class="muted">US 30Y</div><div class="big">5.28%</div></div><div class="card"><div class="muted">Brent</div><div class="big">$101.10</div></div><div class="card"><div class="muted">WTI</div><div class="big">$96.25</div></div><div class="card"><div class="muted">USD/TWD</div><div class="big">31.49</div></div><div class="card"><div class="muted">Gold Futures</div><div class="big">$4,460.80</div></div></div></section>
+<section class="section"><h2>📉 趨勢圖表</h2><div class="chart-grid"><div class="chart-card"><h3>USD/TWD 近一個月</h3><svg viewBox="0 0 720 220"><line x1="28" y1="28" x2="692" y2="28" class="grid"/><line x1="28" y1="110" x2="692" y2="110" class="grid"/><line x1="28" y1="192" x2="692" y2="192" class="grid"/><polyline class="series" points="28,28 53,51 79,60 105,56 130,66 156,57 181,63 207,77 232,98 258,132 283,115 309,117 335,119 360,132 386,131 411,129 437,138 462,157 488,171 513,164 539,170 564,153 590,149 615,170 641,184 667,187 692,192" fill="none" stroke-width="3"/></svg><p class="muted">台幣近一個月走強，美元資產換算回台幣形成匯率逆風。</p></div><div class="chart-card"><h3>US 10Y 與 5% 風險線</h3><svg viewBox="0 0 720 220"><polyline class="series" points="28,192 692,28" fill="none" stroke-width="3"/></svg><p class="muted">目前約 4.83%；若持續往 5% 靠近，成長股與 QLD 壓力可能升高。</p></div><div class="chart-card"><h3>Gold 近期價格</h3><svg viewBox="0 0 720 220"><polyline class="series" points="28,192 360,72 692,28" fill="none" stroke-width="3"/></svg><p class="muted">地緣政治與美元提供支撐，但高殖利率仍是主要壓力。</p></div><div class="chart-card"><h3>VOO vs QQQ vs QLD（8/7 = 100）</h3><svg viewBox="0 0 720 220"><polyline class="series s0" points="28,82 148,69 300,114 450,88 601,82 692,114" fill="none" stroke-width="3"/><polyline class="series s1" points="28,82 148,53 300,120 450,87 601,98 692,103" fill="none" stroke-width="3"/><polyline class="series s2" points="28,82 148,28 300,163 450,102 601,128 692,139" fill="none" stroke-width="3"/></svg><p class="muted">QLD 多日波動明顯放大，需特別留意槓桿複利與回撤。</p></div></div></section>
+<section class="section"><h2>🗓️ 今日重要事件（台灣時間）</h2><table><thead><tr><th>時間</th><th>事件</th><th>重點</th></tr></thead><tbody><tr><td>20:30</td><td>美國 PPI / Core PPI</td><td>觀察能源衝擊是否擴散到生產者物價</td></tr><tr><td>22:30</td><td>EIA 能源庫存</td><td>油價是否繼續維持 $100 上方的重要短線線索</td></tr><tr><td>9/11 01:00</td><td>30Y Treasury Auction</td><td>長債需求與期限溢價</td></tr></tbody></table></section>
+<section class="section"><h2>⚠️ Portfolio Risk</h2><ul><li>科技 / Nasdaq 集中度偏高。</li><li>QLD 是每日 2x 槓桿，波動與回撤被放大。</li><li>10Y / 30Y 高殖利率對長久期成長股估值不利。</li><li>近期台幣升值，美元資產換算回台幣有匯率逆風。</li></ul></section>
+<section class="section"><h2>🚦 Market Regime</h2><div class="grid"><div class="card"><div class="big y">🟡 Equity</div><div class="muted">中性偏謹慎</div></div><div class="card"><div class="big y">🟡 Tech</div><div class="muted">相對抗跌</div></div><div class="card"><div class="big g">🟢 Energy</div><div class="muted">強勢</div></div><div class="card"><div class="big r">🔴 Bonds</div><div class="muted">偏弱</div></div></div></section>
+<section class="section"><h2>🎯 今天只看 3 件事</h2><ol><li>Brent 能否持續站在 $100 以上。</li><li>20:30 PPI 是否再次推高通膨預期。</li><li>US 10Y 是否從 4.83% 進一步往 5% 靠近。</li></ol></section>
+<div class="footer">資料僅供市場研究與資訊整理，不構成個人化投資建議。網站版 v2，後續可改為每日自動更新。</div></main></body></html>
