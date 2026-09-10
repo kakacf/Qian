@@ -1,11 +1,106 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Daily Market Brief</title>
-<style>:root{--panel:#131a2b;--panel2:#0f1626;--text:#eef3ff;--muted:#9aabc7;--border:#26324a;--green:#42d392;--yellow:#ffd166;--red:#ff6b6b}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#0b1020,#0d1322);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;line-height:1.55}.update-banner{background:linear-gradient(90deg,#ffd166,#ffb84d);color:#17120a;text-align:center;padding:8px 14px;font-size:13px;font-weight:750}.topbar{max-width:1120px;margin:auto;padding:14px 22px 0;display:flex;justify-content:flex-end}.history-btn{background:#131a2b;color:#eef3ff;border:1px solid #33405d;border-radius:999px;padding:9px 14px;font-weight:700;cursor:pointer}.drawer{position:fixed;top:0;right:-330px;width:min(330px,88vw);height:100vh;background:#101727;border-left:1px solid var(--border);z-index:30;padding:22px;transition:right .22s ease;box-shadow:-16px 0 40px #0008}.drawer.open{right:0}.drawer-head{display:flex;justify-content:space-between;align-items:center}.close{background:none;border:0;color:#eef3ff;font-size:28px;cursor:pointer}.history-link{display:block;color:#eef3ff;text-decoration:none;background:#182136;border:1px solid var(--border);border-radius:12px;padding:12px;margin:9px 0}.history-link:hover{border-color:#ffd166}.today{color:#ffd166;font-size:12px}.overlay{position:fixed;inset:0;background:#0008;z-index:20;display:none}.overlay.show{display:block}.wrap{max-width:1120px;margin:auto;padding:8px 22px 22px}h1{font-size:clamp(28px,5vw,46px);margin:.2em 0}h2{margin:0 0 14px;font-size:22px}.muted{color:var(--muted)}.hero,.section,.card,.chart-card{background:rgba(19,26,43,.92);border:1px solid var(--border);border-radius:18px}.hero{padding:22px;margin-bottom:16px}.section{padding:18px;margin:16px 0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{padding:15px}.big{font-size:25px;font-weight:750}.g{color:var(--green)}.y{color:var(--yellow)}.r{color:var(--red)}table{width:100%;border-collapse:collapse}th,td{padding:10px 8px;border-bottom:1px solid var(--border);text-align:left}th{color:var(--muted);font-size:13px}.chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.chart-card{padding:14px}svg{width:100%;height:auto;background:var(--panel2);border-radius:12px}.grid{stroke:#33405d;stroke-width:1}.series{stroke:#8fb3ff}.s1{stroke:#70d6a8}.s2{stroke:#ffb86b}.footer{color:var(--muted);font-size:12px;padding:10px 2px 28px}@media(max-width:800px){.grid,.grid3,.chart-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.topbar{padding:12px 12px 0}.wrap{padding:8px 12px 12px}.grid,.grid3,.chart-grid{grid-template-columns:1fr}th,td{font-size:13px}}</style></head>
-<body><div class="update-banner">📣 每個交易日早上 07:30 更新｜重大市場變化將另外提醒</div><div class="topbar"><button class="history-btn" onclick="toggleDrawer(true)">☰ 歷史報告</button></div><div id="overlay" class="overlay" onclick="toggleDrawer(false)"></div><aside id="drawer" class="drawer"><div class="drawer-head"><div><strong>歷史 Daily Report</strong><div class="muted">最近報告</div></div><button class="close" onclick="toggleDrawer(false)">×</button></div><a class="history-link" href="./"><span class="today">最新</span><br>2026-09-10 Daily Market Brief</a><a class="history-link" href="archive/2026-09-10.html">2026-09-10<br><span class="muted">Brent $100 / 利率風險</span></a><p class="muted" style="font-size:12px;margin-top:18px">之後每天的報告會依日期保留在這裡。</p></aside><main class="wrap">
-<div class="hero"><div class="muted">Daily Market Brief · 2026-09-10 · Asia/Taipei</div><h1>Brent 站上 $100，市場重新交易通膨與利率風險</h1><p>油價高檔 → 通膨擔憂升溫 → 美債殖利率上行 → 股票估值承壓；科技股相對抗跌，但 QLD 槓桿曝險需更保守。</p></div>
-<section class="section"><h2>🌎 Overnight Dashboard</h2><div class="grid"><div class="card"><div class="muted">S&P 500</div><div class="big">7,636.36</div><div class="r">-0.48%</div></div><div class="card"><div class="muted">Nasdaq 100</div><div class="big">29,421.55</div><div class="r">-0.29%</div></div><div class="card"><div class="muted">US 10Y</div><div class="big">4.83%</div><div class="r">+3 bps</div></div><div class="card"><div class="muted">VIX</div><div class="big">16.46</div><div class="r">+4.71%</div></div></div></section>
-<section class="section"><h2>🎯 ETF 進場雷達</h2><div class="grid3"><div class="card"><div class="big">VOO <span class="y">🟡</span></div><p>等待。利率與油價仍偏高，風險報酬尚未明顯改善。</p></div><div class="card"><div class="big">QQQ / QQQM <span class="y">🟡</span></div><p>等待。科技相對抗跌，但 10Y 接近高檔，估值敏感度仍高。</p></div><div class="card"><div class="big">QLD <span class="r">🔴</span></div><p>風險偏高。每日 2x 槓桿在高波動與高殖利率環境下標準需更嚴格。</p></div></div></section>
-<section class="section"><h2>📈 Rates / Commodities / FX</h2><div class="grid"><div class="card"><div class="muted">US 2Y</div><div class="big">4.43%</div></div><div class="card"><div class="muted">US 30Y</div><div class="big">5.28%</div></div><div class="card"><div class="muted">Brent</div><div class="big">$101.10</div></div><div class="card"><div class="muted">WTI</div><div class="big">$96.25</div></div><div class="card"><div class="muted">USD/TWD</div><div class="big">31.49</div></div><div class="card"><div class="muted">Gold Futures</div><div class="big">$4,460.80</div></div></div></section>
-<section class="section"><h2>📉 趨勢圖表</h2><div class="chart-grid"><div class="chart-card"><h3>USD/TWD 近一個月</h3><svg viewBox="0 0 720 220"><polyline class="series" points="28,28 105,56 181,63 258,132 335,119 411,129 488,171 564,153 641,184 692,192" fill="none" stroke-width="3"/></svg><p class="muted">台幣近一個月走強，美元資產換算回台幣形成匯率逆風。</p></div><div class="chart-card"><h3>US 10Y</h3><svg viewBox="0 0 720 220"><polyline class="series" points="28,192 692,28" fill="none" stroke-width="3"/></svg><p class="muted">目前約 4.83%；5% 是重要風險觀察區。</p></div><div class="chart-card"><h3>Gold</h3><svg viewBox="0 0 720 220"><polyline class="series" points="28,192 360,72 692,28" fill="none" stroke-width="3"/></svg><p class="muted">地緣政治提供支撐，高殖利率仍是壓力。</p></div><div class="chart-card"><h3>VOO vs QQQ vs QLD</h3><svg viewBox="0 0 720 220"><polyline class="series" points="28,82 300,114 601,82 692,114" fill="none" stroke-width="3"/><polyline class="series s1" points="28,82 300,120 601,98 692,103" fill="none" stroke-width="3"/><polyline class="series s2" points="28,82 300,163 601,128 692,139" fill="none" stroke-width="3"/></svg><p class="muted">QLD 波動明顯放大。</p></div></div></section>
-<section class="section"><h2>🗓️ 今日重要事件（台灣時間）</h2><table><tr><th>時間</th><th>事件</th><th>重點</th></tr><tr><td>20:30</td><td>美國 PPI / Core PPI</td><td>通膨壓力</td></tr><tr><td>22:30</td><td>EIA 能源庫存</td><td>油價線索</td></tr><tr><td>9/11 01:00</td><td>30Y Treasury Auction</td><td>長債需求</td></tr></table></section>
-<section class="section"><h2>⚠️ Portfolio Risk</h2><ul><li>科技 / Nasdaq 集中度偏高。</li><li>QLD 每日 2x 槓桿放大波動。</li><li>長債高殖利率對成長股估值不利。</li><li>近期台幣升值形成美元資產匯率逆風。</li></ul></section><section class="section"><h2>🎯 今天只看 3 件事</h2><ol><li>Brent 能否持續站在 $100 以上。</li><li>20:30 PPI。</li><li>US 10Y 是否往 5% 靠近。</li></ol></section><div class="footer">資料僅供市場研究與資訊整理，不構成個人化投資建議。</div></main><script>function toggleDrawer(open){document.getElementById('drawer').classList.toggle('open',open);document.getElementById('overlay').classList.toggle('show',open);document.body.style.overflow=open?'hidden':''}document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleDrawer(false)})</script></body></html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f3ec">
+<title>Daily Market Brief｜市場晨報</title>
+<style>
+:root{--paper:#f7f3ec;--surface:#fffdf8;--ink:#162033;--muted:#697386;--line:#ded8ce;--navy:#13243e;--green:#16815c;--red:#b63b42;--amber:#9a6414;--soft-navy:#edf2f7;--soft-amber:#fff3d5;--soft-red:#fff0ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;line-height:1.7}.ticker{background:var(--navy);color:#fff;padding:8px 18px;text-align:center;font-size:13px;letter-spacing:.02em}.masthead{max-width:980px;margin:auto;padding:22px 24px 17px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.brand{font-family:Georgia,"Noto Serif TC",serif;font-size:25px;font-weight:700;letter-spacing:-.02em}.brand small{font:600 11px ui-sans-serif,-apple-system,sans-serif;letter-spacing:.12em;color:var(--muted);margin-left:8px}.history-btn{background:transparent;border:1px solid #aeb7c2;color:var(--navy);border-radius:999px;padding:8px 13px;font-weight:700;cursor:pointer}.history-btn:hover{background:var(--soft-navy)}.drawer{position:fixed;top:0;right:-350px;width:min(350px,90vw);height:100vh;background:var(--surface);border-left:1px solid var(--line);z-index:30;padding:24px;transition:right .22s ease;box-shadow:-14px 0 35px #1d27351c}.drawer.open{right:0}.drawer-head{display:flex;justify-content:space-between;align-items:center}.close{background:none;border:0;color:var(--navy);font-size:28px;cursor:pointer}.history-link{display:block;color:var(--ink);text-decoration:none;background:#faf8f2;border:1px solid var(--line);border-radius:10px;padding:12px;margin:11px 0}.history-link:hover{border-color:var(--navy)}.today{color:var(--amber);font-size:12px;font-weight:700}.overlay{position:fixed;inset:0;background:#16203338;z-index:20;display:none}.overlay.show{display:block}.wrap{max-width:980px;margin:auto;padding:0 24px 42px}.eyebrow{color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:24px}.hero{padding:25px 0 28px;border-bottom:1px solid var(--line)}h1,h2,h3{line-height:1.25}.hero h1{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(31px,5vw,51px);letter-spacing:-.035em;margin:10px 0 14px;max-width:850px}.lede{font-size:18px;max-width:760px;margin:0;color:#3e4a5d}.label{display:inline-block;border-radius:999px;background:var(--soft-amber);color:#78500e;padding:4px 10px;font-size:12px;font-weight:800;letter-spacing:.04em}.section{padding:28px 0;border-bottom:1px solid var(--line)}.section-title{display:flex;gap:10px;align-items:baseline;margin:0 0 16px;font-size:24px}.section-kicker{color:var(--muted);font-size:13px;font-weight:600}.takeaway{border-left:4px solid var(--amber);background:var(--soft-amber);padding:17px 19px;border-radius:0 10px 10px 0;font-size:17px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}.metric{padding:16px;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric-name{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.04em}.metric-value{font-size:23px;font-weight:750;margin-top:3px;letter-spacing:-.03em}.down{color:var(--red)}.up{color:var(--green)}.neutral{color:var(--amber)}.stories{display:grid;gap:0;border-top:1px solid var(--line)}.story{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}.story-num{font-family:Georgia,serif;font-size:25px;color:var(--amber)}.story h3{margin:0 0 7px;font-size:19px}.story p{margin:0;color:#465267}.story strong{color:var(--ink)}.radar{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.radar-item{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:17px}.radar-name{font-size:21px;font-weight:800}.status{font-size:12px;font-weight:800;border-radius:999px;padding:4px 8px;margin-left:7px;vertical-align:3px}.wait{background:var(--soft-amber);color:#78500e}.risk{background:var(--soft-red);color:var(--red)}.radar-item p{margin:10px 0 0;color:#526075;font-size:14px}.data-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px}.data-table{width:100%;border-collapse:collapse}.data-table th,.data-table td{padding:10px 0;border-bottom:1px solid var(--line);text-align:left}.data-table th{font-size:12px;letter-spacing:.04em;color:var(--muted)}.chart-list{display:grid;gap:12px}.chart-note{padding:13px 15px;background:var(--soft-navy);border-radius:10px}.chart-note h3{font-size:14px;margin:0 0 2px}.chart-note p{margin:0;color:#526075;font-size:14px}.watch-list{margin:0;padding:0;list-style:none}.watch-list li{padding:12px 0;border-bottom:1px solid var(--line)}.time{display:inline-block;min-width:72px;color:var(--amber);font-weight:800;font-variant-numeric:tabular-nums}.risk-box{background:#fff8f7;border:1px solid #eed1cf;border-radius:12px;padding:17px 20px}.risk-box ul{margin:7px 0 0;padding-left:20px}.footer{color:var(--muted);font-size:12px;padding-top:25px}.footer a{color:inherit}@media(max-width:720px){.masthead,.wrap{padding-left:16px;padding-right:16px}.brand small{display:none}.metrics{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.radar,.data-grid{grid-template-columns:1fr}.hero{padding-top:18px}.lede{font-size:16px}}@media(max-width:420px){.masthead{padding-top:15px;padding-bottom:13px}.brand{font-size:21px}.history-btn{padding:7px 10px}.metric-value{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="ticker">每個交易日早上 07:30 更新｜重大市場變化將另外提醒</div>
+<header class="masthead">
+  <div class="brand">Daily Market Brief <small>MARKET INTELLIGENCE</small></div>
+  <button class="history-btn" onclick="toggleDrawer(true)">☰ 歷史報告</button>
+</header>
+<div id="overlay" class="overlay" onclick="toggleDrawer(false)"></div>
+<aside id="drawer" class="drawer">
+  <div class="drawer-head"><div><strong>歷史 Daily Report</strong><div class="section-kicker">最近報告</div></div><button class="close" onclick="toggleDrawer(false)">×</button></div>
+  <a class="history-link" href="./"><span class="today">最新</span><br>2026-09-10 Daily Market Brief</a>
+  <a class="history-link" href="archive/2026-09-10.html">2026-09-10<br><span class="section-kicker">Brent $100 / 利率風險</span></a>
+  <p class="section-kicker" style="margin-top:20px">之後每天的報告會依日期保留在這裡。</p>
+</aside>
+<main class="wrap">
+  <div class="eyebrow">2026 / 09 / 10 · Asia/Taipei</div>
+  <section class="hero">
+    <span class="label">今日市場主題 · 通膨與利率再定價</span>
+    <h1>Brent 站上 $100，市場重新交易通膨與利率風險</h1>
+    <p class="lede">油價高檔推升通膨疑慮，美債殖利率上行，股票估值承壓。科技股相對抗跌，但 QLD 的槓桿曝險在此環境仍應更保守。</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">先看結論 <span class="section-kicker">TODAY'S TAKEAWAY</span></h2>
+    <div class="takeaway">市場目前的核心不是「Fed 是否立即升息」，而是投資人對長期通膨、財政與原油風險要求更高補償。若 10 年期殖利率持續向 5% 靠近，成長股與槓桿 ETF 的壓力會放大。</div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">市場脈搏 <span class="section-kicker">OVERNIGHT SNAPSHOT</span></h2>
+    <div class="metrics">
+      <div class="metric"><div class="metric-name">S&P 500</div><div class="metric-value">7,636.36</div><div class="down">−0.48%</div></div>
+      <div class="metric"><div class="metric-name">NASDAQ 100</div><div class="metric-value">29,421.55</div><div class="down">−0.29%</div></div>
+      <div class="metric"><div class="metric-name">US 10Y YIELD</div><div class="metric-value">4.83%</div><div class="down">+3 bps</div></div>
+      <div class="metric"><div class="metric-name">VIX</div><div class="metric-value">16.46</div><div class="down">+4.71%</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">今天最重要的三件事 <span class="section-kicker">WHAT MATTERS</span></h2>
+    <div class="stories">
+      <article class="story"><div class="story-num">01</div><div><h3>油價站上關鍵位階</h3><p><strong>發生什麼：</strong>Brent 原油升至 $100 以上。<br><strong>為什麼重要：</strong>能源價格若停留高檔，市場對通膨回落的信心將受考驗。<br><strong>可能影響：</strong>有利能源類股，但對長債、成長股與高估值科技股不利。</p></div></article>
+      <article class="story"><div class="story-num">02</div><div><h3>長債殖利率維持高檔</h3><p><strong>發生什麼：</strong>美國 10 年期殖利率約 4.83%，30 年期約 5.28%。<br><strong>為什麼重要：</strong>市場正在提高對期限、通膨與財政風險的要求。<br><strong>可能影響：</strong>折現率上升，使成長型資產的估值空間收斂。</p></div></article>
+      <article class="story"><div class="story-num">03</div><div><h3>科技相對抗跌，但不是全面安全</h3><p><strong>發生什麼：</strong>Nasdaq 100 跌幅小於 S&P 500。<br><strong>為什麼重要：</strong>資金仍偏好大型科技，但不代表利率風險已解除。<br><strong>可能影響：</strong>QQQ 可觀察；QLD 因每日 2 倍槓桿，需更嚴格控制進場條件。</p></div></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">ETF 行動雷達 <span class="section-kicker">POSITIONING</span></h2>
+    <div class="radar">
+      <div class="radar-item"><div class="radar-name">VOO <span class="status wait">等待</span></div><p>利率與油價仍偏高，風險報酬尚未明顯改善。</p></div>
+      <div class="radar-item"><div class="radar-name">QQQ / QQQM <span class="status wait">等待</span></div><p>科技相對抗跌，但 10Y 接近高檔，估值敏感度仍高。</p></div>
+      <div class="radar-item"><div class="radar-name">QLD <span class="status risk">風險偏高</span></div><p>高波動、高殖利率環境中，每日 2 倍槓桿需要更保守。</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">市場數字與趨勢 <span class="section-kicker">CROSS-ASSET</span></h2>
+    <div class="data-grid">
+      <table class="data-table"><thead><tr><th>資產</th><th>目前</th><th>閱讀重點</th></tr></thead><tbody>
+        <tr><td>US 2Y</td><td>4.43%</td><td>短端利率維持高檔</td></tr>
+        <tr><td>US 30Y</td><td>5.28%</td><td>長債風險溢價偏高</td></tr>
+        <tr><td>Brent</td><td>$101.10</td><td>通膨的近期核心變數</td></tr>
+        <tr><td>WTI</td><td>$96.25</td><td>能源供需線索</td></tr>
+        <tr><td>USD/TWD</td><td>31.49</td><td>美元資產的匯率影響</td></tr>
+        <tr><td>Gold Futures</td><td>$4,460.80</td><td>避險需求仍有支撐</td></tr>
+      </tbody></table>
+      <div class="chart-list">
+        <div class="chart-note"><h3>USD/TWD</h3><p>台幣近一個月走強，美元資產換算回台幣形成匯率逆風。</p></div>
+        <div class="chart-note"><h3>US 10Y</h3><p>目前約 4.83%；5% 是重要風險觀察區。</p></div>
+        <div class="chart-note"><h3>Gold</h3><p>地緣政治提供支撐，高殖利率仍是壓力。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">接下來要看什麼 <span class="section-kicker">NEXT ON THE CALENDAR</span></h2>
+    <ul class="watch-list">
+      <li><span class="time">20:30</span><strong>美國 PPI / Core PPI</strong>　通膨壓力是否再升溫。</li>
+      <li><span class="time">22:30</span><strong>EIA 能源庫存</strong>　油價下一步的供需線索。</li>
+      <li><span class="time">9/11 01:00</span><strong>30Y Treasury Auction</strong>　觀察長債需求是否承接。</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">投資組合提醒 <span class="section-kicker">RISK CHECK</span></h2>
+    <div class="risk-box"><ul><li>科技／Nasdaq 集中度偏高。</li><li>QLD 的每日 2 倍槓桿會放大波動。</li><li>長債高殖利率對成長股估值不利。</li><li>近期台幣升值形成美元資產的匯率逆風。</li></ul></div>
+  </section>
+  <footer class="footer">資料僅供市場研究與資訊整理，不構成個人化投資建議。</footer>
+</main>
+<script>
+function toggleDrawer(open){document.getElementById('drawer').classList.toggle('open',open);document.getElementById('overlay').classList.toggle('show',open);document.body.style.overflow=open?'hidden':''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleDrawer(false)})
+</script>
+</body>
+</html>
