@@ -1,0 +1,101 @@
+name: Apply Pompompurin Financial Editorial Theme
+
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-pompompurin-theme.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Apply theme without changing market content
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+
+          css = r''':root{
+            --bg-primary:#FFF9E8;--bg-secondary:#FFFDF6;--bg-highlight:#FFF1B8;--bg-hover:#FFF4CC;
+            --pudding-yellow:#F7D774;--caramel:#B9783E;--chocolate:#493629;
+            --text-primary:#493629;--text-secondary:#806F60;--text-muted:#A59687;--border:#E8D7B5;
+            --positive:#2F7D5B;--negative:#C6534F;--warning:#D99432;
+            --paper:var(--bg-primary);--surface:var(--bg-secondary);--ink:var(--text-primary);--muted:var(--text-secondary);
+            --line:var(--border);--navy:var(--chocolate);--rise:var(--negative);--fall:var(--positive);
+            --amber:var(--warning);--blue:#FFF7DD;--yellow:var(--bg-highlight);--red:#FFF3EF;--green:#EEF7F0
+          }
+          *{box-sizing:border-box}
+          html{scroll-behavior:smooth;scroll-padding-top:18px;background:var(--bg-primary)}
+          body{margin:0;background:var(--bg-primary);color:var(--text-primary);font-family:Inter,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+          a{color:var(--caramel)}
+          .ticker{background:var(--chocolate);color:var(--bg-primary);text-align:center;padding:8px 14px;font-size:12px;letter-spacing:.02em}
+          .mast,.wrap{max-width:900px;margin:auto;padding-left:22px;padding-right:22px}
+          .mast{padding-top:24px;padding-bottom:18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px}
+          .brand{font:750 27px/1.1 Inter,"Noto Sans TC",system-ui,sans-serif;color:var(--chocolate);letter-spacing:-.03em;position:relative;padding-left:16px}
+          .brand:before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--pudding-yellow);box-shadow:0 0 0 1px #E1C266}
+          .brand:after{content:"DAILY MARKET BRIEF";display:block;margin-top:5px;font-size:9px;font-weight:750;letter-spacing:.16em;color:var(--text-muted)}
+          .btn{border:1px solid var(--caramel);background:transparent;color:var(--chocolate);border-radius:999px;padding:8px 13px;font-weight:750;transition:background-color .2s ease,color .2s ease,border-color .2s ease;cursor:pointer}
+          .btn:hover,.btn:focus-visible{background:var(--chocolate);color:var(--bg-primary);outline:none}
+          .eyebrow,.kicker{font-size:11px;color:var(--text-muted);font-weight:750;letter-spacing:.09em}.eyebrow{margin-top:26px}
+          .hero,.section{padding:30px 0;border-bottom:1px solid var(--border)}
+          .hero h1{font:750 clamp(30px,5vw,49px)/1.18 Inter,"Noto Sans TC",system-ui,sans-serif;letter-spacing:-.035em;color:var(--chocolate);margin:12px 0 14px}
+          .lede{font-size:16px;color:var(--text-secondary);max-width:800px;line-height:1.8}
+          .label{display:inline-block;background:var(--bg-highlight);color:var(--chocolate);border:1px solid var(--border);padding:5px 10px;border-radius:999px;font-size:11px;font-weight:800}
+          .section h2{font-size:22px;line-height:1.35;margin:0 0 17px;color:var(--chocolate);letter-spacing:-.02em}
+          .section h2:before{content:"";display:inline-block;width:6px;height:6px;background:var(--caramel);border-radius:50%;margin-right:9px;vertical-align:4px}
+          .takeaway{border:1px solid var(--border);border-left:4px solid var(--caramel);border-radius:14px;background:var(--bg-highlight);padding:18px 19px;box-shadow:0 4px 16px rgba(73,54,41,.06)}
+          .quicknav{padding:20px 0 17px;border-bottom:1px solid var(--border)}.quicknav-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:11px}
+          .quicknav-title{font:750 15px Inter,"Noto Sans TC",sans-serif;color:var(--chocolate)}.quicknav-note{font-size:11px;color:var(--text-muted)}
+          .quicknav-scroll{display:flex;gap:7px;overflow-x:auto;padding:1px 0 7px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}.quicknav-scroll::-webkit-scrollbar{height:3px}
+          .quicknav a{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--text-secondary);background:transparent;border:1px solid var(--border);border-radius:8px;padding:8px 11px;font-size:12px;font-weight:760;white-space:nowrap;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+          .quicknav a:hover,.quicknav a:focus-visible{color:var(--chocolate);background:var(--bg-hover);border-color:#D9C08A;outline:none}.nav-no{font:800 9px/1 Inter,sans-serif;letter-spacing:.06em;color:var(--caramel)}
+          .back-nav{position:fixed;right:18px;bottom:20px;z-index:8;display:flex;align-items:center;gap:7px;border:1px solid var(--border);background:rgba(255,253,246,.96);color:var(--chocolate);border-radius:9px;padding:9px 12px;font-size:12px;font-weight:800;box-shadow:0 6px 22px rgba(73,54,41,.12);opacity:0;pointer-events:none;transform:translateY(8px);transition:.18s ease;backdrop-filter:blur(8px)}.back-nav.show{opacity:1;pointer-events:auto;transform:none}.back-nav .arrow{font-size:15px;line-height:1}
+          .macro-summary{background:var(--bg-secondary);border:1px solid var(--border);border-left:4px solid var(--warning);border-radius:14px;padding:18px 19px;box-shadow:0 4px 16px rgba(73,54,41,.04)}
+          .macro-summary h3{font:750 21px/1.45 Inter,"Noto Sans TC",sans-serif;color:var(--chocolate);margin:9px 0;letter-spacing:-.02em}
+          .alert{background:#FFF3EF;border:1px solid #EBCBC2;border-left:4px solid var(--negative);border-radius:14px;padding:18px}.alert p{margin-bottom:0}
+          .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:transparent}
+          .metric{padding:15px 16px;border-right:1px solid var(--border);min-width:0}.metric:last-child{border-right:0}.metric small{display:block;color:var(--text-secondary);font-size:11px;margin-bottom:4px}.metric strong{font-size:21px;color:var(--chocolate);letter-spacing:-.02em}.rise{color:var(--negative)}.fall{color:var(--positive)}
+          .macro-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--border)}
+          .macro{background:transparent;border:0;border-bottom:1px solid var(--border);border-radius:0;padding:22px 18px 22px 0}.macro:nth-child(even){padding-left:18px;border-left:1px solid var(--border)}
+          .card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:15px;transition:background-color .2s ease,border-color .2s ease}.card:hover{background:var(--bg-hover)}
+          .macro h3,.card h3{margin:0;color:var(--chocolate)}
+          .direction,.status{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:850;margin:7px 0}.dir-bad,.risk{background:#FFF3EF;color:var(--negative)}.dir-good,.strong{background:#EEF7F0;color:var(--positive)}.dir-mixed,.wait{background:var(--bg-highlight);color:#8B611E}
+          .card:has(.status.risk){border-left:4px solid var(--negative);background:var(--bg-secondary)}
+          .card:has(.status.wait){background:var(--bg-highlight)}
+          .meaning,.card p{font-size:13px;color:var(--text-secondary)}.impact{background:#FFF7DD;border:1px solid #F0DFB0;border-radius:9px;padding:10px 12px;font-size:13px;color:var(--text-primary)}.plain{font-size:13px;color:var(--text-primary);margin-top:9px;font-weight:700}
+          .data{width:100%;border-collapse:collapse}.data th,.data td{padding:11px 8px;border-bottom:1px solid var(--border);text-align:left}.data th{color:var(--text-secondary);font-size:11px;letter-spacing:.04em}
+          .watch{margin:0;padding:0;list-style:none}.watch li{padding:13px 0;border-bottom:1px solid var(--border)}.time{color:var(--caramel);font-weight:800;display:inline-block;min-width:85px}
+          .portfolio-wrap{overflow-x:auto;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:transparent}.portfolio{width:100%;min-width:930px;border-collapse:collapse}.portfolio th,.portfolio td{padding:11px 12px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}.portfolio th{font-size:11px;color:var(--text-secondary)}.portfolio th:first-child,.portfolio td:first-child{text-align:left}
+          .symbol-card{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--chocolate);font-weight:850;border:1px solid var(--border);background:var(--bg-secondary);border-radius:10px;padding:7px 9px;min-width:175px;transition:background-color .2s ease}.symbol-card:hover{background:var(--bg-hover)}
+          .symbol-main{display:flex;flex-direction:column;line-height:1.2}.symbol-name{font-size:14px}.symbol-cta,.stock-cn,.stock-code{font-size:10px;color:var(--text-muted);font-weight:750}.spark{width:52px;height:22px;display:block;flex:0 0 auto}.spark polyline{fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.spark.rise polyline{stroke:var(--negative)}.spark.fall polyline{stroke:var(--positive)}
+          .radar,.stocks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.radar-group{margin-top:21px}.radar-group h3.group-title{font-size:15px;color:var(--chocolate);margin:0 0 10px}.card h3{font-size:16px}.card p{margin:8px 0}.note{font-size:12px;color:var(--text-muted);margin-top:10px}
+          .riskbox{background:var(--bg-secondary);border:1px solid var(--border);border-left:4px solid var(--negative);border-radius:12px;padding:15px 18px}.sources{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.source{background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:12px;transition:background-color .2s ease}.source:hover{background:var(--bg-hover)}
+          .drawer{position:fixed;top:0;right:-360px;width:min(350px,90vw);height:100vh;background:var(--bg-secondary);z-index:20;padding:24px;transition:.2s;border-left:1px solid var(--border);box-shadow:-12px 0 30px rgba(73,54,41,.08)}.drawer.open{right:0}.overlay{display:none;position:fixed;inset:0;background:rgba(73,54,41,.22);z-index:10}.overlay.show{display:block}
+          .history{display:block;margin:12px 0;padding:11px;border:1px solid var(--border);border-radius:9px;color:var(--text-primary);text-decoration:none;transition:background-color .2s ease}.history:hover{background:var(--bg-hover)}.footer{padding:25px 0 42px;color:var(--text-muted);font-size:12px}
+          @media(max-width:720px){.mast,.wrap{padding-left:15px;padding-right:15px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric{border-bottom:1px solid var(--border)}.metric:nth-child(2n){border-right:0}.metric:nth-child(n+3){border-bottom:0}.radar,.stocks,.sources{grid-template-columns:1fr 1fr}.macro-grid{grid-template-columns:1fr}.macro,.macro:nth-child(even){padding:20px 0;border-left:0}.quicknav{margin-left:-15px;margin-right:-15px;padding-left:15px;padding-right:15px}.quicknav-note{display:none}.back-nav{right:12px;bottom:14px;padding:8px 10px}.hero,.section{padding:26px 0}.hero h1{font-size:clamp(29px,9vw,40px)}}
+          @media(max-width:480px){.radar,.stocks,.sources{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric strong{font-size:18px}.mast{align-items:flex-start}.brand{font-size:24px}.btn{font-size:12px;padding:7px 10px}.section h2{font-size:20px}.lede{font-size:15px}}
+          '''
+
+          html = re.sub(r'<meta name="theme-color" content="[^"]+">', '<meta name="theme-color" content="#FFF9E8">', html, count=1)
+          html = re.sub(r'<style>.*?</style>', '<style>' + css + '</style>', html, count=1, flags=re.S)
+          path.write_text(html, encoding='utf-8')
+
+      - name: Commit theme update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Apply Pompompurin financial editorial UI"
+          git push origin main
