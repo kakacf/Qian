@@ -1,0 +1,16 @@
+{
+  "name": "Qian Daily Brief",
+  "short_name": "Qian",
+  "start_url": "/Qian/",
+  "display": "standalone",
+  "background_color": "#FFF9E8",
+  "theme_color": "#493629",
+  "icons": [
+    {
+      "src": "/Qian/qian-icon.svg",
+      "sizes": "256x256",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
