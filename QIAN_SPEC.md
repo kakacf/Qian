@@ -2,6 +2,8 @@
 
 > 本檔案是 Qian Daily Brief 的長期需求來源（source of truth）。使用者在 ChatGPT 調整 Qian 的顯示、資料、分析或更新規則時，必須同步更新本檔案與實際網頁。
 
+> Agent 每次更新前必讀 `AGENTS.md`；資料抓取、發布與失敗處置依 `QIAN_DATA_RUNBOOK.md` 執行。
+
 ## 更新原則
 - 使用者提出 Qian 網頁調整後，直接同步到 `main`，讓 GitHub Pages 可立即查看。
 - 07:00（Asia/Taipei）每個交易日產出完整晨報；07:15 進行缺檔補救檢查，確認首頁與當日 archive 都存在且內容一致。
