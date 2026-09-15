@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#FFF9E8" />
+<link rel="icon" href="/Qian/qian-icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/Qian/qian-icon.svg" />
+<link rel="manifest" href="/Qian/site.webmanifest" />
+<title>Qian Daily Brief｜2026-09-16</title>
+<style>
+      :root {
+        --b: #fff9e8;
+        --s: #fffdf6;
+        --h: #fff1b8;
+        --y: #f7d774;
+        --c: #b9783e;
+        --t: #493629;
+        --m: #806f60;
+        --l: #e8d7b5;
+        --u: #c6534f;
+        --d: #2f7d5b;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--b);
+        color: var(--t);
+        font:
+          14px/1.7 system-ui,
+          "Noto Sans TC",
+          sans-serif;
+      }
+      .wrap,
+      .head {
+        max-width: 900px;
+        margin: auto;
+        padding: 0 20px;
+      }
+      .top {
+        background: var(--t);
+        color: var(--b);
+        text-align: center;
+        padding: 7px;
+      }
+      .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--l);
+      }
+      .brand {
+        font-size: 25px;
+        font-weight: 800;
+      }
+      .header-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .risk-alert {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #e7b4ae;
+        border-left: 4px solid var(--u);
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--t);
+        background: #fff3ef;
+      }
+      .risk-alert small {
+        display: block;
+        color: var(--u);
+      }
+      button {
+        border: 1px solid var(--c);
+        background: none;
+        border-radius: 20px;
+        padding: 8px 12px;
+        color: var(--t);
+        font-weight: 700;
+      }
+      section {
+        padding: 26px 0;
+        border-bottom: 1px solid var(--l);
+      }
+      h1 {
+        font-size: clamp(30px, 6vw, 47px);
+        line-height: 1.15;
+        margin: 10px 0;
+      }
+      h2 {
+        font-size: 21px;
+        margin: 0 0 14px;
+      }
+      .tag,
+      .status {
+        display: inline-block;
+        border-radius: 20px;
+        padding: 4px 9px;
+        font-size: 11px;
+        font-weight: 800;
+        background: var(--h);
+      }
+      .lead,
+      .note,
+      p {
+        color: var(--m);
+      }
+      .box {
+        padding: 16px 18px;
+        border: 1px solid var(--l);
+        border-left: 4px solid var(--c);
+        border-radius: 12px;
+        background: var(--s);
+      }
+      .danger {
+        background: #fff3ef;
+        border-left-color: var(--u);
+      }
+      .nav {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--l);
+        overflow: hidden;
+      }
+      .nav b {
+        display: block;
+        margin-bottom: 8px;
+      }
+      .nav div {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+      }
+      .nav a {
+        flex: none;
+        text-decoration: none;
+        border: 1px solid var(--l);
+        border-radius: 7px;
+        padding: 7px 10px;
+        color: var(--m);
+        white-space: nowrap;
+      }
+      .nav i {
+        font-style: normal;
+        color: var(--c);
+        font-size: 9px;
+        font-weight: 800;
+        margin-right: 5px;
+      }
+      .back {
+        position: fixed;
+        right: 14px;
+        bottom: 14px;
+        z-index: 8;
+        text-decoration: none;
+        background: #fffdf6f5;
+        border: 1px solid var(--l);
+        border-radius: 8px;
+        padding: 8px 10px;
+        color: var(--t);
+        font-weight: 800;
+        box-shadow: 0 5px 18px #49362922;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .back.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border: 1px solid var(--l);
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--s);
+      }
+      .metric {
+        padding: 14px;
+        border-right: 1px solid var(--l);
+        border-bottom: 1px solid var(--l);
+      }
+      .metric:nth-child(2n) {
+        border-right: 0;
+      }
+      .metric:nth-child(n + 3) {
+        border-bottom: 0;
+      }
+      .metric small,
+      .c small,
+      td small {
+        display: block;
+        color: var(--m);
+      }
+      .metric strong {
+        font-size: 20px;
+      }
+      .rise {
+        color: var(--u);
+      }
+      .fall {
+        color: var(--d);
+      }
+      .grid,
+      .radar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .macro {
+        padding: 14px;
+        border: 1px solid var(--l);
+        border-radius: 10px;
+        background: var(--s);
+      }
+      .macro h3,
+      .c h3 {
+        margin: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 9px;
+        border-bottom: 1px solid var(--l);
+        text-align: left;
+        white-space: nowrap;
+      }
+      th {
+        font-size: 11px;
+        color: var(--m);
+      }
+      .scroll {
+        overflow-x: auto;
+      }
+      .sl {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: var(--t);
+        min-width: 170px;
+      }
+      .spark {
+        width: 54px;
+        height: 22px;
+      }
+      .spark polyline {
+        fill: none;
+        stroke-width: 2.3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .spark.rise polyline {
+        stroke: var(--u);
+      }
+      .spark.fall polyline {
+        stroke: var(--d);
+      }
+      .c {
+        border: 1px solid var(--l);
+        border-radius: 11px;
+        padding: 13px;
+        background: var(--s);
+      }
+      .c.wait {
+        background: var(--h);
+      }
+      .c.risk {
+        border-left: 4px solid var(--u);
+      }
+      .c.strong {
+        border-left: 4px solid var(--d);
+      }
+      #etf .radar > .strong,
+      #stocks .radar > .strong {
+        order: 1;
+      }
+      #etf .radar > .risk,
+      #stocks .radar > .risk {
+        order: 2;
+      }
+      #etf .radar > .wait,
+      #stocks .radar > .wait {
+        order: 3;
+      }
+      .c p {
+        margin: 6px 0;
+        font-size: 12px;
+      }
+      .group {
+        margin: 16px 0 7px;
+      }
+      .sources {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .source {
+        border: 1px solid var(--l);
+        border-radius: 9px;
+        padding: 10px;
+        background: var(--s);
+      }
+      .drawer {
+        position: fixed;
+        right: -360px;
+        top: 0;
+        width: min(340px, 90vw);
+        height: 100vh;
+        background: var(--s);
+        z-index: 20;
+        padding: 20px;
+        transition: 0.2s;
+        border-left: 1px solid var(--l);
+      }
+      .drawer.open {
+        right: 0;
+      }
+      .ov {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #49362944;
+        z-index: 10;
+      }
+      .ov.show {
+        display: block;
+      }
+      .history {
+        display: block;
+        margin: 10px 0;
+        padding: 9px;
+        border: 1px solid var(--l);
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--t);
+      }
+      @media (max-width: 650px) {
+        .wrap,
+        .head {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+        .radar,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .sources {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 430px) {
+        .sources {
+          grid-template-columns: 1fr;
+        }
+      }
+      #pull {
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -64px);
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 13px;
+        border: 1px solid var(--l);
+        border-radius: 0 0 14px 14px;
+        background: var(--s);
+        box-shadow: 0 4px 12px #49362918;
+        color: var(--m);
+        font-size: 12px;
+        font-weight: 700;
+        transition: transform 0.16s ease;
+      }
+      #pull.ready {
+        color: var(--c);
+      }
+      #pull.loading {
+        transform: translate(-50%, 0) !important;
+        color: var(--c);
+      }
+    </style>
+</head>
+<body>
+<div id="pull" aria-live="polite">↓ 下拉刷新</div>
+<div class="top">2026/09/16 07:00 台灣時間｜美股與台股價格皆截至 9/15 收盤｜紅＝上漲、綠＝下跌</div>
+<header class="head"><div class="brand">Qian Daily Brief</div><div class="header-actions"><button aria-label="刷新資料" title="刷新資料" onclick="refreshTop()">↻</button><button aria-label="更多" title="更多" onclick="tog(1)">☰</button></div></header>
+<div id="ov" class="ov" onclick="tog(0)"></div>
+<aside id="drawer" class="drawer"><button onclick="tog(0)">關閉</button><h3>兩日內風險示警</h3><a class="risk-alert" href="/Qian/risk-alert.html"><b>⚠️ 兩日內風險示警</b><small>示警中｜2026/09/15 06:28 更新</small></a><h3>歷史 Daily Brief</h3><a class="history" href="/Qian/"><b>最新 2026-09-16</b></a><a class="history" href="/Qian/archive/2026-09-16.html">2026-09-16｜油價、5%殖利率與Fed</a><a class="history" href="/Qian/archive/2026-09-15.html">2026-09-15｜油價、5%殖利率與半導體壓力</a><a class="history" href="/Qian/archive/2026-09-14.html">2026-09-14｜週五反彈、週末能源風險</a><a class="history" href="/Qian/archive/2026-09-11.html">2026-09-11｜油價 + 長債 + CPI</a><a class="history" href="/Qian/archive/2026-09-10.html">2026-09-10｜Brent $100</a></aside>
+<a id="back" class="back" href="#nav">↑ 快速導覽</a>
+<main class="wrap">
+<section><span class="tag">今日市場主題 · 油價再升、10Y 收在 5%、Fed 決策倒數</span><h1>風險未失控，但「能源通膨＋高殖利率＋市場廣度惡化」仍壓抑成長股</h1><p class="lead">9/15 S&amp;P 500 收跌 0.45%、Nasdaq Composite 跌 0.78%，NYSE 與 Nasdaq 下跌家數分別約為上漲家數的 2.56 倍與 2.33 倍。Brent 收 $108.75、WTI 收 $105.83；官方 10Y 收 5.00%，VIX 約 17.20。市場等待 9/17 凌晨 Fed 決策與記者會。</p></section>
+<section><a class="risk-alert" href="/Qian/risk-alert.html"><b>⚠️ 最新風險示警</b><small>最後更新：2026/09/15 06:28（Asia/Taipei）｜VOO 🟡｜QQQ/QQQM 🔴｜QLD 🔴</small><span>此區塊可獨立於每日晨報更新；目前沿用最近一次已驗證示警，不以晨報時間覆蓋。</span></a></section>
+<section><h2>先看結論</h2><div class="box"><b>Market Regime：🔴 高油價、高長債殖利率、Fed 事件前的風險市場。</b><br/>指數跌幅尚未達恐慌，但廣度惡化、10Y 收在 5%、油價急升，使成長股與每日槓桿產品的風險報酬仍偏弱。防禦與低波動標的可小額分批；QLD 維持最高警戒。</div></section>
+<nav class="nav" id="nav"><b>本期導覽</b><div><a href="#macro"><i>01</i>總經總覽</a><a href="#pulse"><i>02</i>市場脈搏</a><a href="#impact"><i>03</i>總經 → 股票</a><a href="#numbers"><i>04</i>市場數字</a><a href="#events"><i>05</i>重要事件</a><a href="#watch"><i>06</i>重點觀察</a><a href="#etf"><i>07</i>ETF 雷達</a><a href="#stocks"><i>08</i>個股雷達</a><a href="#notes"><i>09</i>觀察提醒</a><a href="#sources"><i>10</i>資料來源</a></div></nav>
+<section id="macro"><h2>總經總覽</h2><div class="box"><b>客觀資料：</b>8 月 CPI 月增 0.4%、年增 3.4%，核心年增 2.4%；8 月 PPI 月增 0.4%；7 月 PCE 與核心 PCE 均月增 0.2%。8 月非農增加 16.2 萬、失業率 4.1%；Q2 GDP 第二估值年化成長 1.5%。<p><b>分析判斷：</b>通膨尚未回到舒適區，油價衝擊又推升升息預期。Fed 若偏鷹且長債續升，QQQ／SMH／QLD最敏感；若油價、10Y與VIX同步回落，才是風險報酬實質改善。</p></div></section>
+<section id="pulse"><h2>市場脈搏</h2><div class="metrics"><div class="metric"><small>S&amp;P 500（9/15）</small><strong>7,585.73</strong><div class="fall">−0.45%</div></div><div class="metric"><small>Nasdaq Composite（9/15）</small><strong>25,981.57</strong><div class="fall">−0.78%</div></div><div class="metric"><small>US 10Y（官方收盤）</small><strong>5.00%</strong><div class="rise">+3 bps</div></div><div class="metric"><small>VIX（9/15）</small><strong>約 17.20</strong><div class="rise">+0.58%</div></div></div></section>
+<section id="impact"><h2>總經 → 股票</h2><div class="radar"><div class="macro"><h3>油價與通膨</h3><p>Brent +2.9%、WTI +4.4%；能源供應受阻提高通膨黏性，壓抑消費與長久期估值，並直接增加航空成本。</p></div><div class="macro"><h3>殖利率與 Fed</h3><p>官方 2Y 4.67%、10Y 5.00%、30Y 5.36%。曲線高檔，市場對 9/16 美國時間升息高度定價。</p></div><div class="macro"><h3>市場廣度</h3><p>NYSE 下跌／上漲約 2.56：1，Nasdaq 約 2.33：1；這次不再只是少數權重股拖累，廣度轉差值得警戒。</p></div><div class="macro"><h3>美元、黃金與台幣</h3><p>DXY 約 99.65；USD/TWD 約 31.91。現貨金約 $4,293，美元與殖利率偏高壓抑金價。</p></div></div></section>
+<section id="numbers"><h2>市場數字</h2><div class="scroll"><table><thead><tr><th>資產</th><th>最新</th><th>日變動</th><th>解讀</th></tr></thead><tbody><tr><td>Dow Jones</td><td>52,093.11</td><td class="fall">−0.63%</td><td>全面偏弱</td></tr><tr><td>S&amp;P 500</td><td>7,585.73</td><td class="fall">−0.45%</td><td>連續回落</td></tr><tr><td>Nasdaq Composite</td><td>25,981.57</td><td class="fall">−0.78%</td><td>科技承壓</td></tr><tr><td>VIX</td><td>約 17.20</td><td class="rise">+0.58%</td><td>未恐慌但未降溫</td></tr><tr><td>US 2Y / 10Y / 30Y</td><td>4.67% / 5.00% / 5.36%</td><td class="rise">長端上行</td><td>估值逆風</td></tr><tr><td>Brent / WTI</td><td>$108.75 / $105.83</td><td class="rise">+2.9% / +4.4%</td><td>供應風險溢價</td></tr><tr><td>USD/TWD</td><td>約 31.91</td><td class="rise">+0.47%</td><td>台幣偏弱</td></tr><tr><td>Gold spot</td><td>約 $4,293</td><td class="fall">−0.1%</td><td>利率／美元壓力</td></tr></tbody></table></div></section>
+<section id="events"><h2>台灣時間重要事件</h2><div class="timeline"><div><b>9/16（三）20:30</b><p>美國 8 月零售銷售；消費韌性將影響 Fed 後續路徑與長債殖利率。</p></div><div><b>9/17（四）02:00</b><p>FOMC 利率決策與經濟預測；市場高度定價升息 25 bps。</p></div><div><b>9/17（四）02:30</b><p>Fed 主席記者會；重點是能源通膨、後續升息速度與資產負債表訊號。</p></div></div></section>
+<section id="watch"><h2>核心觀察標的</h2><div class="scroll"><table><thead><tr><th>標的</th><th>前收</th><th>最新</th><th>1D</th><th>5D</th><th>1M</th><th>MA20</th><th>20日趨勢</th></tr></thead><tbody><tr><td><a class="sl" href="/Qian/charts/?symbol=VOO"><b>VOO</b><small>2026-09-15｜查看趨勢</small></a></td><td>699.35</td><td>696.29</td><td class="fall">-0.44%</td><td class="fall">-1.12%</td><td class="fall">-2.60%</td><td>703.47<small>低於 1.02%</small></td><td><svg class="spark fall" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,9.6 3.7,7.8 6.5,15.2 9.2,11.7 11.9,14.1 14.7,11.6 17.4,11.3 20.2,5.4 22.9,7.4 25.6,10.3 28.4,16.2 31.1,12.2 33.8,3.0 36.6,6.5 39.3,11.2 42.1,15.4 44.8,20.5 47.5,13.2 50.3,17.2 53.0,21.0"/></svg></td></tr><tr><td><a class="sl" href="/Qian/charts/?symbol=QQQ"><b>QQQ</b><small>2026-09-15｜查看趨勢</small></a></td><td>709.24</td><td>704.60</td><td class="fall">-0.65%</td><td class="fall">-1.93%</td><td class="fall">-3.76%</td><td>713.34<small>低於 1.22%</small></td><td><svg class="spark fall" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,6.7 3.7,8.6 6.5,14.1 9.2,11.4 11.9,19.1 14.7,14.4 17.4,13.8 20.2,3.0 22.9,8.2 25.6,7.9 28.4,17.7 31.1,15.9 33.8,6.8 36.6,5.3 39.3,6.0 42.1,8.3 44.8,16.5 47.5,9.8 50.3,16.0 53.0,21.0"/></svg></td></tr><tr><td><a class="sl" href="/Qian/charts/?symbol=QQQM"><b>QQQM</b><small>2026-09-15｜查看趨勢</small></a></td><td>292.01</td><td>290.07</td><td class="fall">-0.66%</td><td class="fall">-1.91%</td><td class="fall">-3.75%</td><td>293.66<small>低於 1.22%</small></td><td><svg class="spark fall" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,6.8 3.7,8.9 6.5,14.0 9.2,11.7 11.9,18.9 14.7,14.3 17.4,13.8 20.2,3.0 22.9,8.1 25.6,7.8 28.4,17.6 31.1,16.0 33.8,6.7 36.6,5.3 39.3,6.1 42.1,8.4 44.8,16.5 47.5,9.8 50.3,15.9 53.0,21.0"/></svg></td></tr><tr><td><a class="sl" href="/Qian/charts/?symbol=QLD"><b>QLD</b><small>2026-09-15｜查看趨勢</small></a></td><td>88.225</td><td>86.900</td><td class="fall">-1.50%</td><td class="fall">-3.97%</td><td class="fall">-7.94%</td><td>89.357<small>低於 2.75%</small></td><td><svg class="spark fall" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,6.4 3.7,7.8 6.5,12.7 9.2,10.2 11.9,17.5 14.7,13.4 17.4,12.9 20.2,3.0 22.9,8.2 25.6,7.7 28.4,17.0 31.1,15.5 33.8,7.1 36.6,6.0 39.3,6.7 42.1,9.0 44.8,16.4 47.5,10.4 50.3,15.7 53.0,21.0"/></svg></td></tr><tr><td><a class="sl" href="/Qian/charts/?symbol=AAPL"><b>AAPL</b><small>2026-09-15｜查看趨勢</small></a></td><td>333.00</td><td>331.34</td><td class="fall">-0.50%</td><td class="rise">+4.77%</td><td class="rise">+8.53%</td><td>319.30<small>站上 3.77%</small></td><td><svg class="spark fall" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,20.3 3.7,15.2 6.5,19.5 9.2,21.0 11.9,20.2 14.7,20.5 17.4,17.8 20.2,17.0 22.9,13.2 25.6,15.0 28.4,8.9 31.1,9.0 33.8,6.6 36.6,12.9 39.3,15.7 42.1,16.3 44.8,7.8 47.5,3.6 50.3,3.0 53.0,4.3"/></svg></td></tr><tr><td><a class="sl" href="/Qian/charts/?symbol=NVDA"><b>NVDA</b><small>2026-09-15｜查看趨勢</small></a></td><td>211.00</td><td>212.17</td><td class="rise">+0.55%</td><td class="fall">-6.05%</td><td class="fall">-5.86%</td><td>218.83<small>低於 3.05%</small></td><td><svg class="spark rise" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,11.7 3.7,13.5 6.5,14.0 9.2,15.8 11.9,21.0 14.7,17.3 17.4,19.9 20.2,4.7 22.9,13.5 25.6,10.7 28.4,13.5 31.1,7.8 33.8,4.4 36.6,3.0 39.3,6.6 42.1,8.3 44.8,12.8 47.5,13.0 50.3,18.9 53.0,17.9"/></svg></td></tr><tr><td><a class="sl" href="/Qian/charts/?symbol=2330"><b>台積電 2330</b><small>2026-09-15｜查看趨勢</small></a></td><td>2,380.00</td><td>2,385.00</td><td class="rise">+0.21%</td><td class="fall">-3.44%</td><td class="fall">-0.42%</td><td>2,410.25<small>低於 1.05%</small></td><td><svg class="spark rise" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,21.0 3.7,17.3 6.5,12.0 9.2,17.3 11.9,13.5 14.7,11.3 17.4,12.0 20.2,10.5 22.9,12.8 25.6,7.5 28.4,15.8 31.1,15.0 33.8,12.0 36.6,4.5 39.3,3.0 42.1,3.8 44.8,6.0 47.5,12.0 50.3,16.5 53.0,15.8"/></svg></td></tr><tr><td><a class="sl" href="/Qian/charts/?symbol=2618"><b>長榮航空 2618</b><small>2026-09-15｜查看趨勢</small></a></td><td>42.050</td><td>41.200</td><td class="fall">-2.02%</td><td class="fall">-2.94%</td><td class="rise">+3.26%</td><td>42.260<small>低於 2.51%</small></td><td><svg class="spark fall" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,17.0 3.7,10.5 6.5,7.0 9.2,6.5 11.9,11.0 14.7,3.0 17.4,5.5 20.2,15.0 22.9,13.0 25.6,9.0 28.4,11.5 31.1,5.0 33.8,8.0 36.6,12.0 39.3,8.5 42.1,7.5 44.8,15.0 47.5,9.5 50.3,12.5 53.0,21.0"/></svg></td></tr><tr><td><a class="sl" href="/Qian/charts/?symbol=1711"><b>永光化學 1711</b><small>2026-09-15｜查看趨勢</small></a></td><td>37.950</td><td>38.100</td><td class="rise">+0.40%</td><td class="fall">-3.54%</td><td class="fall">-1.04%</td><td>41.003<small>低於 7.08%</small></td><td><svg class="spark rise" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,21.0 3.7,17.0 6.5,14.8 9.2,11.1 11.9,11.5 14.7,3.0 17.4,5.0 20.2,3.9 22.9,5.4 25.6,3.6 28.4,5.3 31.1,10.6 33.8,8.5 36.6,12.5 39.3,16.5 42.1,15.5 44.8,17.8 47.5,19.6 50.3,21.0 53.0,20.6"/></svg></td></tr><tr><td><a class="sl" href="/Qian/charts/?symbol=0050"><b>0050</b><small>2026-09-15｜查看趨勢</small></a></td><td>106.90</td><td>106.25</td><td class="fall">-0.61%</td><td class="fall">-3.10%</td><td class="fall">-0.14%</td><td>106.67<small>低於 0.40%</small></td><td><svg class="spark fall" viewBox="0 0 54 22" aria-label="20日趨勢"><polyline points="1.0,21.0 3.7,19.1 6.5,16.9 9.2,19.1 11.9,17.6 14.7,13.6 17.4,13.2 20.2,10.8 22.9,12.7 25.6,6.8 28.4,11.2 31.1,12.8 33.8,8.3 36.6,3.0 39.3,3.7 42.1,3.7 44.8,5.0 47.5,8.8 50.3,10.9 53.0,12.7"/></svg></td></tr></tbody></table></div><p class="note">全部為觀察標的，不代表實際持有。美股來自 Alpaca IEX；台股來自 Fugle-Stock，資料日皆為 2026-09-15。</p></section>
+<section id="etf"><h2>ETF 進場雷達</h2><p class="note">固定依 🟢 → 🔴 → 🟡 排序；綠燈僅代表可考慮分批，不代表底部。</p><h3 class="group">美股 ETF</h3><div class="radar"><article class="c wait"><h3>SCHD</h3><b>🟡 等待</b><p>單日近乎持平、相對抗跌，但 Fed 與能源通膨尚未落幕。</p><p><strong>數據：</strong>2026-09-15 收 34.335，1D -0.01%，5D -0.16%，1M -0.29%，MA20 34.720。</p></article><article class="c wait"><h3>VIG</h3><b>🟡 等待</b><p>品質股仍低於 MA20，高殖利率環境下等待更清楚止穩。</p><p><strong>數據：</strong>2026-09-15 收 237.49，1D -0.42%，5D -1.05%，1M -3.71%，MA20 241.85。</p></article><article class="c wait"><h3>VOO</h3><b>🟡 等待</b><p>連兩日回落且市場廣度轉弱；尚未出現油價、殖利率、VIX同步改善。</p><p><strong>數據：</strong>2026-09-15 收 696.29，1D -0.44%，5D -1.12%，1M -2.60%，MA20 703.47。</p></article><article class="c wait"><h3>VTI</h3><b>🟡 等待</b><p>全市場廣度惡化，先等 Fed 後重新站回 MA20。</p><p><strong>數據：</strong>2026-09-15 收 372.75，1D -0.51%，5D -1.28%，1M -3.01%，MA20 377.41。</p></article><article class="c risk"><h3>QLD</h3><b>🔴 風險高</b><p>每日 2x；5D近 -4%、1M近 -8%，路徑耗損與波動風險最高。</p><p><strong>數據：</strong>2026-09-15 收 86.900，1D -1.50%，5D -3.97%，1M -7.94%，MA20 89.357。</p></article><article class="c risk"><h3>QQQ</h3><b>🔴 風險高</b><p>10Y 收在 5%，科技估值與廣度同時承壓。</p><p><strong>數據：</strong>2026-09-15 收 704.60，1D -0.65%，5D -1.93%，1M -3.76%，MA20 713.34。</p></article><article class="c risk"><h3>QQQM</h3><b>🔴 風險高</b><p>與 QQQ 同步，Fed 決策前不因短線回檔放寬門檻。</p><p><strong>數據：</strong>2026-09-15 收 290.07，1D -0.66%，5D -1.91%，1M -3.75%，MA20 293.66。</p></article><article class="c risk"><h3>SMH</h3><b>🔴 風險高</b><p>單日小幅反彈但 5D仍跌逾5%，半導體尚未完成止穩。</p><p><strong>數據：</strong>2026-09-15 收 542.10，1D +0.23%，5D -5.53%，1M -7.97%，MA20 558.45。</p></article><article class="c risk"><h3>AVUV</h3><b>🔴 風險偏高</b><p>小型價值對融資成本敏感，10Y在5%使風險報酬仍不理想。</p><p><strong>數據：</strong>2026-09-15 收 123.87，1D -0.10%，5D -1.15%，1M -3.24%，MA20 125.39。</p></article></div><h3 class="group">台股 ETF</h3><div class="radar"><article class="c strong"><h3>00713</h3><b>🟢 可考慮小幅分批</b><p>低波動因子站上 MA20、相對抗跌；僅適合小額分批，不追價。</p><p><strong>數據：</strong>2026-09-15 收 64.250，1D -0.16%，5D +0.94%，1M +5.59%，MA20 62.592。</p></article><article class="c risk"><h3>00919</h3><b>🔴 避免追高</b><p>1M漲逾7%，仍接近高檔，安全邊際不足。</p><p><strong>數據：</strong>2026-09-15 收 32.740，1D -0.46%，5D +0.09%，1M +7.10%，MA20 31.910。</p></article><article class="c wait"><h3>0050</h3><b>🟡 等待</b><p>5D跌逾3%，台積電與全球科技仍受高殖利率約束。</p><p><strong>數據：</strong>2026-09-15 收 106.25，1D -0.61%，5D -3.10%，1M -0.14%，MA20 106.67。</p></article><article class="c wait"><h3>00878</h3><b>🟡 等待</b><p>收益型相對穩健，但接近近期高檔，等待拉回。</p><p><strong>數據：</strong>2026-09-15 收 34.200，1D -0.09%，5D +0.38%，1M +0.97%，MA20 33.394。</p></article><article class="c wait"><h3>0056</h3><b>🟡 等待</b><p>防禦性尚可，惟單日回落且外部風險未解除。</p><p><strong>數據：</strong>2026-09-15 收 55.000，1D -0.72%，5D -1.35%，1M +3.00%，MA20 54.260。</p></article></div></section>
+<section id="stocks"><h2>個股雷達</h2><p class="note">固定依 🟢 → 🔴 → 🟡 排序；同色內優先顯示風險／機會最明顯者。</p><h3 class="group">美股個股</h3><div class="radar"><article class="c strong"><h3>COST</h3><b>🟢 可考慮小幅分批</b><p>1M回檔逾6%，防禦屬性仍在；分批並等待重新站回 MA20。</p><p><strong>數據：</strong>2026-09-15 收 901.31，1D -1.90%，5D -1.01%，1M -6.28%，MA20 933.02。</p></article><article class="c risk"><h3>META</h3><b>🔴 避免追高</b><p>1M漲逾12%、遠高於 MA20，短線安全邊際偏小。</p><p><strong>數據：</strong>2026-09-15 收 670.49，1D +0.73%，5D +9.31%，1M +12.72%，MA20 595.31。</p></article><article class="c risk"><h3>NET</h3><b>🔴 避免追高</b><p>5D仍漲約15%，波動大且估值對殖利率敏感。</p><p><strong>數據：</strong>2026-09-15 收 327.12，1D -1.04%，5D +15.06%，1M -1.13%，MA20 295.80。</p></article><article class="c risk"><h3>AAPL</h3><b>🔴 避免追高</b><p>1M漲逾8%，接近近期高檔，Fed 前不追價。</p><p><strong>數據：</strong>2026-09-15 收 331.34，1D -0.50%，5D +4.77%，1M +8.53%，MA20 319.30。</p></article><article class="c risk"><h3>NVDA</h3><b>🔴 風險高</b><p>雖單日反彈，5D仍跌逾6%，半導體廣度尚未修復。</p><p><strong>數據：</strong>2026-09-15 收 212.17，1D +0.55%，5D -6.05%，1M -5.86%，MA20 218.83。</p></article><article class="c wait"><h3>AMZN</h3><b>🟡 等待</b><p>單日跌約2%、1M跌逾6%，有回檔但高利率與消費風險仍在。</p><p><strong>數據：</strong>2026-09-15 收 248.45，1D -2.00%，5D -3.31%，1M -6.31%，MA20 257.83。</p></article><article class="c wait"><h3>MSFT</h3><b>🟡 等待</b><p>回到 MA20附近，等待 Fed 與 AI資本支出疑慮釐清。</p><p><strong>數據：</strong>2026-09-15 收 497.11，1D -1.70%，5D +0.64%，1M +0.06%，MA20 495.78。</p></article><article class="c wait"><h3>GOOG</h3><b>🟡 等待</b><p>單日回落但仍高於 MA20，先觀察是否守住相對強勢。</p><p><strong>數據：</strong>2026-09-15 收 341.32，1D -1.27%，5D +1.77%，1M -0.76%，MA20 338.13。</p></article><article class="c wait"><h3>BRK.B</h3><b>🟡 等待</b><p>防禦性佳但接近近期高位，等待更佳價格。</p><p><strong>數據：</strong>2026-09-15 收 516.42，1D +0.30%，5D +2.10%，1M +1.85%，MA20 505.22。</p></article><article class="c wait"><h3>JPM</h3><b>🟡 等待</b><p>高利率利差利多與投行／信用風險互相抵銷。</p><p><strong>數據：</strong>2026-09-15 收 352.89，1D +0.77%，5D -0.19%，1M -2.82%，MA20 355.73。</p></article></div><h3 class="group">台股個股</h3><div class="radar"><article class="c strong"><h3>1711</h3><b>🟢 可觀察小額分批</b><p>自近期高位明顯回檔，風險報酬改善；仍低於 MA20，需嚴格分批。</p><p><strong>數據：</strong>2026-09-15 收 38.100，1D +0.40%，5D -3.54%，1M -1.04%，MA20 41.003。</p></article><article class="c risk"><h3>2618</h3><b>🔴 風險高</b><p>單日跌逾2%，Brent/WTI急升直接推高航空燃油成本。</p><p><strong>數據：</strong>2026-09-15 收 41.200，1D -2.02%，5D -2.94%，1M +3.26%，MA20 42.260。</p></article><article class="c risk"><h3>2330</h3><b>🔴 風險偏高</b><p>雖小幅反彈，5D仍跌逾3%；全球科技與10Y 5%仍是逆風。</p><p><strong>數據：</strong>2026-09-15 收 2,385.00，1D +0.21%，5D -3.44%，1M -0.42%，MA20 2,410.25。</p></article></div></section>
+<section id="notes"><h2>今日 3 件重點</h2><ol><li><b>Fed 決策前不追槓桿：</b>QLD 1M跌近8%，事件波動與每日重置效應都要求更嚴格門檻。</li><li><b>先看油價與10Y：</b>Brent $108.75、10Y 5.00%；兩者未同步降溫前，成長股估值壓力仍在。</li><li><b>廣度比指數更值得警戒：</b>NYSE與Nasdaq下跌家數均超過上漲家數兩倍，若延續，VOO也可能提高風險燈號。</li></ol><p class="note">本報告是研究整理，不是保證獲利、全倉買賣或底部判定。</p></section>
+<section id="sources"><h2>資料來源與事實／判斷區分</h2><div class="sources"><div class="source"><b>Alpaca IEX</b><br/><small>19檔美股／ETF 2026-09-15 收盤與歷史價量、MA與區間報酬。</small></div><div class="source"><b>Fugle-Stock</b><br/><small>8檔台股 ETF／個股近5年交易日線；逐檔核對代碼與 2026-09-15 收盤。</small></div><div class="source"><b><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026">U.S. Treasury</a>／<a href="https://www.bls.gov/">BLS</a>／<a href="https://www.bea.gov/">BEA</a>／<a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">Federal Reserve</a></b><br/><small>殖利率、CPI/PPI、PCE/GDP與FOMC日期等官方事實。</small></div><div class="source"><b><a href="https://www.reuters.com/business/wall-st-futures-slip-rising-oil-treasury-yields-compound-ai-anxiety-2026-09-15/">Reuters 美股</a>／<a href="https://www.reuters.com/business/energy/oil-prices-rise-saudi-pipeline-outage-fresh-attacks-raise-supply-concerns-2026-09-15/">Reuters 原油</a>／<a href="https://www.cboe.com/tradable-products/vix/">Cboe VIX</a></b><br/><small>指數、廣度、油價、Fed定價與VIX交叉驗證。</small></div><div class="source"><b><a href="https://tradingeconomics.com/taiwan/currency">USD/TWD</a>／<a href="https://www.reuters.com/world/india/gold-holds-ground-investors-await-fed-policy-cues-2026-09-15/">Reuters Gold</a></b><br/><small>匯率與黃金市場快照。</small></div><div class="source"><b>分析判斷</b><br/><small>Market Regime、雷達燈號、支撐與分批條件為 Qian 依上述資料推導，不是客觀價格或保證。</small></div></div><p><a href="/Qian/sources.html">完整資料來源</a></p></section>
+<p class="note">Qian Research｜最後整理：2026/09/16 07:00（Asia/Taipei）</p>
+</main>
+<script>
+      function refreshTop() {
+        try {
+          sessionStorage.setItem("qian-refresh-top", "1");
+        } catch (e) {}
+        location.reload();
+      }
+      if (history.scrollRestoration) history.scrollRestoration = "manual";
+      try {
+        if (sessionStorage.getItem("qian-refresh-top") === "1") {
+          sessionStorage.removeItem("qian-refresh-top");
+          addEventListener("load", () => scrollTo(0, 0), { once: true });
+        }
+      } catch (e) {}
+    </script>
+    <script>
+      function tog(v) {
+        drawer.classList.toggle("open", v);
+        ov.classList.toggle("show", v);
+      }
+      const n = document.getElementById("nav"),
+        b = document.getElementById("back");
+      function s() {
+        b.classList.toggle("show", n.getBoundingClientRect().bottom < 0);
+      }
+      addEventListener("scroll", s, { passive: true });
+      s();
+    </script>
+    <script>
+      (() => {
+        const p = document.getElementById("pull"),
+          top = () =>
+            Math.max(
+              window.scrollY || 0,
+              document.documentElement.scrollTop || 0,
+              document.body.scrollTop || 0,
+            ) <= 1;
+        let y = 0,
+          d = 0,
+          drag = 0;
+        document.addEventListener(
+          "touchstart",
+          (e) => {
+            if (top()) {
+              y = e.touches[0].clientY;
+              drag = 1;
+            }
+          },
+          { passive: true },
+        );
+        document.addEventListener(
+          "touchmove",
+          (e) => {
+            if (!drag) return;
+            d = Math.max(0, e.touches[0].clientY - y);
+            if (d > 8 && top()) {
+              const o = Math.min(70, d * 0.8);
+              p.style.transform = `translate(-50%,${-64 + o}px)`;
+              p.classList.toggle("ready", d >= 65);
+              p.textContent = d >= 65 ? "↻ 放開刷新" : "↓ 下拉刷新";
+            }
+          },
+          { passive: true },
+        );
+        document.addEventListener(
+          "touchend",
+          () => {
+            if (!drag) return;
+            drag = 0;
+            if (d >= 65) {
+              p.classList.remove("ready");
+              p.classList.add("loading");
+              p.textContent = "↻ 正在刷新…";
+              setTimeout(() => location.reload(), 120);
+            } else p.style.transform = "";
+            d = 0;
+          },
+          { passive: true },
+        );
+      })();
+    </script>
+  
+</body></html>
