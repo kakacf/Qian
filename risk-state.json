@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-09-21T16:55:54+08:00",
-  "marketDataAt": "2026-09-21T16:55:54+08:00",
-  "vix": 14.81,
-  "us10y": 5.01,
-  "brent": 101.70,
-  "sp500": 7650.5,
-  "nasdaq100": 29644.17,
+  "updatedAt": "2026-09-21T19:31:14+08:00",
+  "marketDataAt": "2026-09-21T19:31:14+08:00",
+  "vix": 14.89,
+  "us10y": 4.954,
+  "brent": 101.09,
+  "sp500": 7701.9,
+  "nasdaq100": 29944.7,
   "voo": 701.85,
   "qqq": 721.36,
   "qld": 91.02,
-  "riskLevel": "high-event-watch"
+  "riskLevel": "improving-opportunity"
 }
