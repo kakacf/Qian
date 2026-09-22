@@ -40,9 +40,16 @@
         homeLink.innerHTML = `<strong>最新 ${latest.date.replaceAll("-", "/")}</strong>`;
       }
 
-      let insertionPoint = heading.nextElementSibling;
+      const insertionPoint = homeLink
+        ? homeLink.nextElementSibling
+        : heading.nextElementSibling;
       for (const report of reports) {
-        if (!report?.href || !report?.date || existingHrefs.has(report.href)) continue;
+        if (
+          !report?.href ||
+          !report?.date ||
+          existingHrefs.has(report.href) ||
+          (homeLink && report.href === latest?.href)
+        ) continue;
         const link = document.createElement("a");
         link.className = "history";
         link.href = report.href;
