@@ -1,6 +1,19 @@
 # Qian — Agent 工作規則
 
-本檔案約束所有修改 `kakacf/Qian` 的 agent。執行前必讀 `QIAN_SPEC.md` 與 `QIAN_DATA_RUNBOOK.md`。
+本檔案約束所有修改 `kakacf/Qian` 的 agent。執行前必讀 `QIAN_SPEC.md`、`QIAN_DATA_RUNBOOK.md` 與 `UI_BOUNDARIES.md`。
+
+## UI Protection
+
+1. 修改任何前端 HTML、CSS、layout 或 component structure 前，必須先讀取 `UI_BOUNDARIES.md`，並明確寫出本次 Task Scope。
+2. 現有 UI 預設全部受保護。功能需求不代表允許重新設計、重新排序、改樣式、改尺寸或移動任何未指定的 UI。
+3. 只有使用者明確要求修改 UI 時，才可修改其指定區域；其他區域仍維持 Protected UI。
+4. 所有修改採最小變更原則。若功能可透過資料、邏輯、狀態或排程修正完成，不得修改 UI。
+5. 若任務沒有要求 UI 改動，HTML／CSS／layout 的視覺 diff 應接近 0。
+6. 完成後必須依 `UI_BOUNDARIES.md` 執行 UI Regression Check。
+
+> Existing UI is protected unless the user explicitly asks to change it.
+
+> Functional change does not imply visual change.
 
 ## 每日晨報與資料更新
 
