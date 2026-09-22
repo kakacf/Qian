@@ -1,0 +1,11 @@
+---
+layout: null
+---
+{
+  "reports": [
+    {% assign reports = site.static_files | where_exp: "file", "file.path contains '/archive/'" | where: "extname", ".html" | sort: "path" | reverse %}
+    {% for file in reports %}
+    {"date":"{{ file.name | remove: '.html' }}","href":"{{ file.path | relative_url }}"}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}

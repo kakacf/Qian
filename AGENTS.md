@@ -30,5 +30,6 @@
 3. Risk Alert 是獨立增量更新：只改首頁 `index.html` 與 `risk-alert.html`，但不能覆寫晨報內容。風險示警本身要顯示自己的更新時間。
 4. 發布後重新讀取 GitHub 的檔案與 GitHub Pages，確認公開頁面已包含新日期與新數值；「排程被觸發」不算完成，只有可見頁面與 archive 都驗證成功才算完成。
 5. 若 GitHub 寫入失敗，直接改用已連接的 GitHub connector；不得只留下本機 commit 就宣稱已發布。
+6. 新增或更新日報時，首頁與 archive 都必須保留 `/Qian/history.js`；歷史 Drawer 由 `archive/history.json` 自動列出全部 archive，不得讓舊日報的歷史清單停在當時日期。
 
 完整來源、檢查指令與失敗處置見 `QIAN_DATA_RUNBOOK.md`。
