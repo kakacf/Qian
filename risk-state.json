@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-09-22T23:03:52+08:00",
-  "marketDataAt": "2026-09-22T23:03:52+08:00",
+  "updatedAt": "2026-09-23T01:17:48+08:00",
+  "marketDataAt": "2026-09-23T01:17:48+08:00",
   "vix": 14.89,
   "us10y": 4.95,
   "brent": 98.46,
   "sp500": 7770.81,
   "nasdaq100": 30377.08,
-  "voo": 712.855,
-  "qqq": 744.79,
-  "qld": 97.155,
+  "voo": 712.57,
+  "qqq": 745.22,
+  "qld": 97.34,
   "riskLevel": "confirmed-improving-opportunity"
 }
