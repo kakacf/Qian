@@ -1,0 +1,35 @@
+name: Build Qian iOS icon
+
+on:
+  push:
+    paths:
+      - ".github/workflows/build-ios-icon.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build-icon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build PNG icons
+        run: |
+          python -m pip install --quiet Pillow
+          python - <<'PY'
+          from PIL import Image
+          img = Image.open("qian-icon.jpg").convert("RGB")
+          img.resize((180, 180), Image.Resampling.LANCZOS).save("apple-touch-icon.png", "PNG")
+          img.resize((512, 512), Image.Resampling.LANCZOS).save("qian-icon-512.png", "PNG")
+          PY
+      - name: Commit PNG icons
+        run: |
+          git config user.name "qian-icon-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add apple-touch-icon.png qian-icon-512.png
+          git diff --cached --quiet && exit 0
+          git commit -m "Build PNG app icons for iOS"
+          git push
