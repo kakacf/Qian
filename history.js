@@ -43,6 +43,11 @@
       const insertionPoint = homeLink
         ? homeLink.nextElementSibling
         : heading.nextElementSibling;
+
+      // history.json 已依日期由新到舊排列。
+      // 使用 DocumentFragment 一次插入，避免重複 insertBefore()
+      // 將順序反轉成舊到新。
+      const fragment = document.createDocumentFragment();
       for (const report of reports) {
         if (
           !report?.href ||
@@ -54,8 +59,9 @@
         link.className = "history";
         link.href = report.href;
         link.textContent = report.date.replaceAll("-", "/");
-        drawer.insertBefore(link, insertionPoint);
+        fragment.appendChild(link);
       }
+      drawer.insertBefore(fragment, insertionPoint);
     })
     .catch(() => {
       // 保留各頁原有靜態清單作為失敗時的 fallback。
