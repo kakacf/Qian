@@ -28,10 +28,6 @@
         node = node.nextElementSibling;
       }
 
-      const existingHrefs = new Set(
-        existingLinks.map((link) => new URL(link.href, location.origin).pathname)
-      );
-
       const latest = reports[0];
       const homeLink = existingLinks.find(
         (link) => new URL(link.href, location.origin).pathname === "/Qian/"
@@ -40,19 +36,20 @@
         homeLink.innerHTML = `<strong>最新 ${latest.date.replaceAll("-", "/")}</strong>`;
       }
 
-      const insertionPoint = homeLink
-        ? homeLink.nextElementSibling
-        : heading.nextElementSibling;
+      // 移除區段內既有的 archive 靜態連結，改由 history.json 統一重建。
+      // 這可避免「只有較舊日期是動態補入」時被插到最新日期前面。
+      for (const link of existingLinks) {
+        const pathname = new URL(link.href, location.origin).pathname;
+        if (pathname.startsWith("/Qian/archive/")) link.remove();
+      }
 
-      // history.json 已依日期由新到舊排列。
-      // 使用 DocumentFragment 一次插入，避免重複 insertBefore()
-      // 將順序反轉成舊到新。
+      // history.json 已依日期由新到舊排列；一次建立完整清單並插入，
+      // 保證 Drawer 永遠維持最新日期在最上方。
       const fragment = document.createDocumentFragment();
       for (const report of reports) {
         if (
           !report?.href ||
           !report?.date ||
-          existingHrefs.has(report.href) ||
           (homeLink && report.href === latest?.href)
         ) continue;
         const link = document.createElement("a");
@@ -61,7 +58,8 @@
         link.textContent = report.date.replaceAll("-", "/");
         fragment.appendChild(link);
       }
-      drawer.insertBefore(fragment, insertionPoint);
+
+      drawer.insertBefore(fragment, nextHeading);
     })
     .catch(() => {
       // 保留各頁原有靜態清單作為失敗時的 fallback。
