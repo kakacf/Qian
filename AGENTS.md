@@ -1,6 +1,6 @@
 # Qian — Agent 工作規則
 
-本檔案約束所有修改 `kakacf/Qian` 的 agent。執行前必讀 `QIAN_SPEC.md`、`QIAN_DATA_RUNBOOK.md` 與 `UI_BOUNDARIES.md`。
+本檔案約束所有修改 `kakacf/Qian` 的 agent。執行前必讀 `QIAN_SPEC.md`、`QIAN_DATA_RUNBOOK.md`、`UI_BOUNDARIES.md` 與 `APP_ICON_RULES.md`。
 
 ## UI Protection
 
@@ -33,3 +33,10 @@
 6. 新增或更新日報時，首頁與 archive 都必須保留 `/Qian/history.js`；歷史 Drawer 由 `archive/history.json` 自動列出全部 archive，不得讓舊日報的歷史清單停在當時日期。
 
 完整來源、檢查指令與失敗處置見 `QIAN_DATA_RUNBOOK.md`。
+
+
+## App Icon Protection
+
+1. 任何會修改 `index.html`、當日 archive、`<head>`、Theme 或 manifest 的任務，必須先讀 `APP_ICON_RULES.md`。
+2. 三隻招財貓 App Icon 為 Protected Asset；每日晨報、UI 改版與 HTML 重建都不得移除或替換。
+3. 發布前必須確認 iOS PNG icon、manifest 與 `apple-mobile-web-app-title=Qian` 仍存在；缺任一項不得視為完成。
