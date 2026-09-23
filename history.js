@@ -15,6 +15,10 @@
     .then(({ reports }) => {
       if (!Array.isArray(reports)) return;
 
+      reports = reports
+        .filter((report) => report?.date && report?.href)
+        .sort((a, b) => b.date.localeCompare(a.date));
+
       const nextHeading = (() => {
         let node = heading.nextElementSibling;
         while (node && !/^H[23]$/.test(node.tagName)) node = node.nextElementSibling;
