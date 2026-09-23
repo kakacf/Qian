@@ -1,13 +1,18 @@
 {
-  "updatedAt": "2026-09-23T19:33:58+08:00",
-  "marketDataAt": "2026-09-23T19:20:00+08:00",
+  "updatedAt": "2026-09-23T22:23:00+08:00",
+  "marketDataAt": "2026-09-23T22:23:00+08:00",
   "vix": 14.89,
+  "vixProxy": 16.645,
   "us10y": 4.932,
+  "us10yProxy": 90.515,
   "brent": 98.82,
+  "brentProxy": 59.66,
   "sp500": 7770.81,
+  "sp500Proxy": 768.75,
   "nasdaq100": 30377.08,
-  "voo": 713.16,
-  "qqq": 746.70,
-  "qld": 97.61,
-  "riskLevel": "confirmed-improving-opportunity"
+  "nasdaq100Proxy": 738.615,
+  "voo": 708.605,
+  "qqq": 738.615,
+  "qld": 95.93,
+  "riskLevel": "rising-tech-energy-rates"
 }
