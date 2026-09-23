@@ -199,5 +199,6 @@ Qian 是「先理解市場，再看觀察標的」的晨報：
 
 ## App Icon 固定規則
 - 首頁與每日 archive 的 `<head>` 必須保留 Qian App icon / PWA 設定，不可被晨報覆蓋移除。
-- 固定保留：`theme-color`、`/Qian/qian-icon.svg` favicon、`apple-touch-icon`、`/Qian/site.webmanifest`。
+- 固定保留：`theme-color`、`apple-mobile-web-app-title=Qian`、`/Qian/apple-touch-icon.png`（180×180）、`/Qian/qian-icon-512.png`、`/Qian/site.webmanifest`。
 - App icon 使用目前的三隻招財貓圖，不得在未經使用者要求下更換。
+- iOS 加入主畫面必須優先使用 PNG `apple-touch-icon.png`，不可只依賴 SVG/JPEG。
