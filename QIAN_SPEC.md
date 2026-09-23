@@ -195,3 +195,9 @@ Qian 是「先理解市場，再看觀察標的」的晨報：
 - **快速索引採低彩度 Editorial Brief 導覽：小型編號 + 文字、細框、小圓角，不使用 emoji-heavy 膠囊按鈕。**
 - **右下角固定提供 `↑ 快速導覽`，僅在使用者已滑過索引後出現；回到索引附近即隱藏。**
 - 雷達標的多時允許依「美股 ETF / 台股 ETF」「美股個股 / 台股個股」分組或折疊，但不能省略評估。
+
+
+## App Icon 固定規則
+- 首頁與每日 archive 的 `<head>` 必須保留 Qian App icon / PWA 設定，不可被晨報覆蓋移除。
+- 固定保留：`theme-color`、`/Qian/qian-icon.svg` favicon、`apple-touch-icon`、`/Qian/site.webmanifest`。
+- App icon 使用目前的三隻招財貓圖，不得在未經使用者要求下更換。
