@@ -7,9 +7,9 @@
   "theme_color": "#493629",
   "icons": [
     {
-      "src": "/Qian/qian-icon.svg",
+      "src": "/Qian/qian-icon.jpg?v=20260924-1",
       "sizes": "256x256",
-      "type": "image/svg+xml",
+      "type": "image/jpeg",
       "purpose": "any"
     }
   ]
