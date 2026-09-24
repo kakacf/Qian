@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-24T16:36:00+08:00",
-  "marketDataAt": "2026-09-24T04:54:00+08:00",
+  "updatedAt": "2026-09-24T19:26:00+08:00",
+  "marketDataAt": "2026-09-24T19:11:47+08:00",
   "vix": 15.18,
   "vixProxy": 16.79,
   "us10y": 5.11,
@@ -10,9 +10,9 @@
   "sp500": 7709.6,
   "sp500Proxy": 767.69,
   "nasdaq100": null,
-  "nasdaq100Proxy": 741.17,
-  "voo": 707.28,
-  "qqq": 741.2,
-  "qld": 96.11,
+  "nasdaq100Proxy": 741.21,
+  "voo": 707.6,
+  "qqq": 741.21,
+  "qld": 96.16,
   "riskLevel": "rising-tech-energy-rates"
 }
