@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-28T22:47:00+08:00",
-  "marketDataAt": "2026-09-28T22:47:00+08:00",
+  "updatedAt": "2026-09-29T01:22:00+08:00",
+  "marketDataAt": "2026-09-29T01:08:10+08:00",
   "vix": 15.88,
   "vixProxy": 16.97,
   "us10y": 5.209,
@@ -11,9 +11,9 @@
   "sp500": 7705.9,
   "sp500Proxy": 764.29,
   "nasdaq100": null,
-  "nasdaq100Proxy": 732.23,
-  "voo": 702.36,
-  "qqq": 732.23,
-  "qld": 93.7,
+  "nasdaq100Proxy": 736.83,
+  "voo": 704.54,
+  "qqq": 736.83,
+  "qld": 94.90,
   "riskLevel": "elevated-market-bond-oil-pressure"
 }
