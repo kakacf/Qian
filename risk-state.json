@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-02T04:32:17+08:00",
-  "marketDataAt": "2026-10-02T04:32:17+08:00",
+  "updatedAt": "2026-10-02T08:15:02+08:00",
+  "marketDataAt": "2026-10-02T04:54:12+08:00",
   "directDataAt": "2026-10-01T22:47:48+08:00",
   "session": "us-close-mixed",
   "vix": 16.38,
@@ -16,7 +16,8 @@
   "brentProxyPct": 4.72,
   "wti": 91.75,
   "sp500": 7651.54,
-  "sp500Proxy": 702.255,
+  "sp500Proxy": 764.10,
+  "sp500ProxyPct": 0.23,
   "voo": 702.255,
   "vooPct": 0.24,
   "nasdaq100": 30382.31,
