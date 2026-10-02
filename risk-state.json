@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-03T04:39:00+08:00",
-  "marketDataAt": "2026-10-03T04:38:40+08:00",
+  "updatedAt": "2026-10-03T07:20:00+08:00",
+  "marketDataAt": "2026-10-03T04:00:00+08:00",
   "directDataAt": "2026-10-03T01:50:37+08:00",
-  "session": "us-close-rally-held-yields-elevated",
+  "session": "us-close-no-material-change",
   "vix": 15.64,
   "vixPct": -4.58,
   "vixProxy": 16.72,
