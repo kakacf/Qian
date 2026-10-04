@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T07:55:09+08:00",
+  "updatedAt": "2026-10-04T10:50:45+08:00",
   "marketDataAt": "2026-10-03T04:00:00+08:00",
   "directDataAt": "2026-10-03T08:15:00+08:00",
   "session": "weekend-no-material-change",
@@ -12,7 +12,7 @@
   "brent": 99.436,
   "brentContract": "front-month",
   "brentPct": -2.81,
-  "brentProxy": 63.09,
+  "brentProxy": 63.1,
   "brentProxyPct": 0.21,
   "sp500Proxy": 707.54,
   "sp500ProxyPct": 0.70,
