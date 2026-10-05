@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-06T04:38:00+08:00",
-  "marketDataAt": "2026-10-06T04:23:44+08:00",
+  "updatedAt": "2026-10-06T07:34:00+08:00",
+  "marketDataAt": "2026-10-06T04:57:31+08:00",
   "session": "monday-us-close-equities-firmer-yields-elevated-no-trigger",
   "vix": 15.58,
   "vixPct": 1.76,
@@ -11,11 +11,11 @@
   "sp500Pct": 0.70,
   "nasdaq100": 31020.93,
   "nasdaq100Pct": 0.69,
-  "voo": 712.32,
-  "vooPct": 0.61,
-  "qqq": 756.20,
-  "qqqPct": 0.83,
-  "qld": 99.84,
-  "qldPct": 1.65,
+  "voo": 712.41,
+  "vooPct": 0.72,
+  "qqq": 756.23,
+  "qqqPct": 0.90,
+  "qld": 99.77,
+  "qldPct": 1.72,
   "riskLevel": "stable-cautious-yields-elevated-no-trigger"
 }
