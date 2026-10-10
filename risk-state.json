@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-10-10T10:47:00+08:00",
+  "updatedAt": "2026-10-10T14:10:00+08:00",
   "marketDataAt": "2026-10-10T04:00:00+08:00",
   "session": "friday-us-close",
   "vix": 14.84,
-  "vixPct": -4.20,
+  "vixPct": -4.2,
   "vixAsOf": "2026-10-09T16:00:00-04:00",
   "us10y": 5.244,
   "us10yAsOf": "2026-10-09T16:00:00-04:00",
   "brent": 102.82,
-  "brentPct": -1.40,
+  "brentPct": -1.4,
   "brentAsOf": "2026-10-09T16:00:00-04:00",
   "sp500": 7811.54,
   "sp500Pct": 0.59,
@@ -20,7 +20,7 @@
   "vooPct": 0.61162,
   "qqq": 751.26,
   "qqqPct": 0.50234,
-  "qld": 98.40,
+  "qld": 98.4,
   "qldPct": 0.95414,
   "riskLevel": "energy-rates-tech-risk-elevated-but-stable"
 }
