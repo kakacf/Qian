@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T16:37:23+08:00",
+  "updatedAt": "2026-10-11T19:39:27+08:00",
   "marketDataAt": "2026-10-10T04:15:00+08:00",
   "session": "sunday-market-closed",
   "vix": 14.84,
@@ -16,11 +16,11 @@
   "nasdaq100": 30883.15,
   "nasdaq100Pct": 0.51,
   "nasdaq100AsOf": "2026-10-09T16:00:00-04:00",
-  "voo": 715.59,
-  "vooPct": 0.58627,
-  "qqq": 751.27,
-  "qqqPct": 0.46550,
-  "qld": 98.42,
-  "qldPct": 0.89194,
+  "voo": 715.58,
+  "vooPct": 0.61162,
+  "qqq": 751.26,
+  "qqqPct": 0.50299,
+  "qld": 98.40,
+  "qldPct": 0.95414,
   "riskLevel": "energy-rates-tech-risk-elevated-but-stable"
 }
