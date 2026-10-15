@@ -58,7 +58,7 @@
         ) continue;
         const link = document.createElement("a");
         link.className = "history";
-        link.href = report.href;
+        link.href = `${report.href}?v=20261015-full`;
         link.textContent = report.date.replaceAll("-", "/");
         fragment.appendChild(link);
       }
