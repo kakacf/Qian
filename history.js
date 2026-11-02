@@ -51,11 +51,7 @@
       // 保證 Drawer 永遠維持最新日期在最上方。
       const fragment = document.createDocumentFragment();
       for (const report of reports) {
-        if (
-          !report?.href ||
-          !report?.date ||
-          (homeLink && report.href === latest?.href)
-        ) continue;
+        if (!report?.href || !report?.date) continue;
         const link = document.createElement("a");
         link.className = "history";
         link.href = `${report.href}?v=20261015-full`;
